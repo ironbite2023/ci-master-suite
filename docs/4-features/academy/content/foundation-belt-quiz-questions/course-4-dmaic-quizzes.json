@@ -1,0 +1,342 @@
+[
+  {
+    "module": "4.1",
+    "module_name": "Define Phase",
+    "question": "What is the primary purpose of creating a Project Charter during the Define phase of DMAIC?",
+    "type": "multiple_choice",
+    "options": [
+      "To document the problem, goal, scope, team, and timeline—creating a shared understanding and authorization to proceed with the project",
+      "To calculate process capability (Cp/Cpk)",
+      "To identify root causes of the problem",
+      "To implement solutions immediately"
+    ],
+    "correct_answer": 0,
+    "explanation": "The Project Charter is the Define phase's most critical deliverable, serving as the project's 'constitution.' It includes: (1) Problem Statement defining what's wrong, (2) Goal Statement with specific targets, (3) Business Case explaining why it matters, (4) Scope boundaries, (5) Team roles, (6) Timeline, and (7) Required resources. The charter creates alignment across stakeholders, provides authorization from leadership, prevents scope creep, establishes accountability, and serves as a communication tool. A strong charter is specific and measurable: 'Reduce defects from 15% to 3% in Production Line A within 6 months, saving $500K annually.' Without a charter, teams lack direction and stakeholder buy-in. Option B (Cp/Cpk) is calculated in Measure phase. Option C (root causes) happens in Analyze phase. Option D (implementing solutions) occurs in Improve phase after thorough analysis.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-4.1.1",
+    "estimated_time_seconds": 80
+  },
+  {
+    "module": "4.1",
+    "module_name": "Define Phase",
+    "question": "A Six Sigma team writes this problem statement: 'The problem is we need better quality.' Why is this inadequate?",
+    "type": "multiple_choice",
+    "options": [
+      "It's too vague—a good problem statement is specific, measurable, and includes current performance data (e.g., 'Defect rate is 15%, costing $500K annually')",
+      "It's perfect as written—short and clear",
+      "Problem statements should never mention quality",
+      "Problem statements should only include solutions"
+    ],
+    "correct_answer": 0,
+    "explanation": "Vague problem statements lead to unfocused projects that waste resources. 'We need better quality' fails because it's too vague (which quality aspect?), not measurable (how to know if improved?), lacks baseline data, has no business impact quantification, and is solution-focused rather than problem-focused. Strong problem statements follow the What + Where + When + Impact formula: 'Injection molding defects in Product Line A increased from 3% to 15% over 6 months, resulting in $500K annual scrap costs and 20% customer returns.' This is specific (injection molding defects), located (Line A), quantified (15%), trending (increased over 6 months), and shows impact ($500K + returns). The 5-point test: States problem not solution, is specific, is measurable, shows business impact, avoids blame. Option B is wrong—brevity without specificity provides no direction. Option C is wrong—quality is often the subject. Option D is wrong—solutions come later, not in problem statements.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-4.1.2",
+    "estimated_time_seconds": 80
+  },
+  {
+    "module": "4.1",
+    "module_name": "Define Phase",
+    "question": "What is a SIPOC diagram, and why is it useful in the Define phase?",
+    "type": "multiple_choice",
+    "options": [
+      "SIPOC maps Suppliers-Inputs-Process-Outputs-Customers at a high level, helping the team understand the process scope and boundaries before diving into details",
+      "SIPOC is a statistical calculation used in the Measure phase",
+      "SIPOC identifies root causes of problems",
+      "SIPOC is a type of control chart"
+    ],
+    "correct_answer": 0,
+    "explanation": "SIPOC prevents teams from getting lost in complexity by establishing clear boundaries. S (Suppliers): Who provides inputs—vendors, previous departments, IT systems. I (Inputs): What goes into the process—materials, information, specifications. P (Process): Major steps at high level (5-7 steps)—Receive, Prepare, Assemble, Test, Ship. O (Outputs): What the process produces—finished products, reports, services. C (Customers): Who receives outputs—end customers, next department, downstream processes. SIPOC is valuable for: (1) Scope definition showing start/end points to prevent endless expansion, (2) Shared understanding so teams align on what's included, (3) High-level view before detail to identify investigation areas, (4) Stakeholder identification showing who to engage. It's intentionally high-level; detailed process maps with 30-50 steps come later. Option B is wrong—SIPOC is a mapping tool, not statistical. Option C is wrong—root causes identified in Analyze phase. Option D is wrong—control charts are statistical tools.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-4.1.3",
+    "estimated_time_seconds": 85
+  },
+  {
+    "module": "4.1",
+    "module_name": "Define Phase",
+    "question": "What is Voice of the Customer (VOC), and why must it be captured in the Define phase?",
+    "type": "multiple_choice",
+    "options": [
+      "VOC captures what customers actually need, want, and expect—it ensures the project solves real customer problems rather than what the team assumes customers want",
+      "VOC is a statistical term for variation",
+      "VOC means asking customers to design the solution",
+      "VOC is only relevant for external customers, not internal processes"
+    ],
+    "correct_answer": 0,
+    "explanation": "Voice of the Customer prevents solving the wrong problem. Many projects fail by fixing what teams think matters rather than what actually matters to customers. Example: Team assumes 'customers want faster delivery.' VOC reveals 'customers want accurate delivery dates—we can plan around 7 days if reliable, but 3-day promises that become 10 days are unacceptable.' Methods for capturing VOC: (1) Direct interviews for deep understanding, (2) Surveys for large samples, (3) Focus groups for group insights, (4) Observation to reveal unstated needs, (5) Complaint analysis for pain points. VOC must be translated to Critical-to-Quality (CTQ) requirements: VOC 'package needs to survive shipping' becomes CTQ 'box crush strength ≥ 200 PSI, no visible damage.' VOC applies to both external (end buyers) and internal customers (next department). If manufacturing components for assembly, the assembly team is your customer—their VOC matters! Option B is wrong—VOC is about requirements, not variation. Option C is wrong—customers define requirements, not solutions. Option D is wrong—VOC applies equally to internal and external customers.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-4.1.4",
+    "estimated_time_seconds": 85
+  },
+  {
+    "module": "4.1",
+    "module_name": "Define Phase",
+    "question": "A Six Sigma project team defines their goal as: 'Reduce defects as much as possible.' What's wrong with this goal statement?",
+    "type": "multiple_choice",
+    "options": [
+      "It's not SMART (Specific, Measurable, Achievable, Relevant, Time-bound)—a good goal quantifies the target and deadline (e.g., 'Reduce defects from 15% to 3% by June 30')",
+      "The goal is perfect—it gives the team flexibility",
+      "Goals should never mention defects",
+      "The goal is too specific and constrains creativity"
+    ],
+    "correct_answer": 0,
+    "explanation": "Vague goals lead to vague results. 'As much as possible' fails because it's not measurable (how to know when achieved?), has no target (is 10% reduction success?), has no deadline (could take forever), creates no accountability, and invites scope creep. SMART framework: S (Specific) - exactly what improves: 'Reduce injection molding defects' not 'improve quality.' M (Measurable) - quantified target: 'Reduce from 15% to 3%' not 'reduce defects.' A (Achievable) - realistic given resources: '15% to 3%' is challenging but feasible, '15% to 0.001%' unrealistic. R (Relevant) - aligned with business priorities: $500K savings, improves customer satisfaction. T (Time-bound) - clear deadline: 'By June 30, 2025' not 'eventually.' Strong SMART goal: 'Reduce injection molding defects in Product Line A from 15% to 3% by June 30, 2025, saving $500K annually and improving customer satisfaction from 72% to 85%.' This provides clear success criteria, measurable progress, urgency, resource justification, and celebration milestone. Option B is wrong—flexibility without direction is wandering. Option C is wrong—defects are common in Six Sigma goals. Option D is wrong—specificity focuses creativity on the right problem.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-4.1.5",
+    "estimated_time_seconds": 85
+  },
+  {
+    "module": "4.2",
+    "module_name": "Measure Phase",
+    "question": "Why must a Six Sigma team validate their measurement system before collecting process data?",
+    "type": "multiple_choice",
+    "options": [
+      "Because unreliable measurements produce unreliable conclusions—if your measurement system has high variation, you can't distinguish process variation from measurement variation",
+      "Measurement validation is optional and can be skipped to save time",
+      "All measurement systems are automatically accurate",
+      "Measurement validation is only needed for laboratory equipment"
+    ],
+    "correct_answer": 0,
+    "explanation": "Poor measurement wastes months analyzing noise instead of signal. If you measure 10 parts and get varying readings, is the variation real (process problem) or measurement error? Without validation, you don't know! Sources of measurement variation: (1) Repeatability—same operator measuring same part gets different results each time (gauge precision poor), (2) Reproducibility—different operators get different results (operators use gauge differently), (3) Accuracy/Bias—measurements consistent but wrong (gauge calibrated incorrectly), (4) Stability—measurements drift over time. Measurement System Analysis (Gage R&R) quantifies this: <10% of total variation = excellent, 10-30% = acceptable, >30% = unacceptable—fix measurement before proceeding. Real example: Team measures cycle times, finds high variation (3-12 minutes). Before jumping to solutions, they validate: use stopwatch, define start/stop precisely, have 3 people time same cycles. Result: measurements vary ±2 minutes from timing differences! They standardize (automated timer, clear start/stop), re-measure, find actual variation is only 5-7 minutes. This changes the entire analysis. Option B is wrong—skipping risks analyzing measurement error. Option C is wrong—all systems have error. Option D is wrong—all measurement systems need validation (timers, scales, surveys, inspections).",
+    "difficulty": "beginner",
+    "learning_objective": "LO-4.2.1",
+    "estimated_time_seconds": 90
+  },
+  {
+    "module": "4.2",
+    "module_name": "Measure Phase",
+    "question": "What is the purpose of calculating baseline process capability (Cp and Cpk) in the Measure phase?",
+    "type": "multiple_choice",
+    "options": [
+      "To quantify current process performance relative to specifications, establishing a baseline for measuring improvement and determining if the process can meet requirements",
+      "To identify root causes of variation",
+      "To implement control charts",
+      "To calculate the project ROI"
+    ],
+    "correct_answer": 0,
+    "explanation": "Process capability answers: 'Can this process consistently produce output within specifications?' Cp (Potential Capability) = (USL - LSL) / (6σ), assumes process centered, shows how capable if perfectly centered. Cpk (Actual Capability) = min[(USL - μ)/(3σ), (μ - LSL)/(3σ)], accounts for centering, shows real-world capability. Interpretation: Cpk < 1.0 = incapable (produces defects), significant % out of spec, immediate action required. Cpk = 1.0 = marginally capable, ~2,700 PPM defects, not acceptable for critical characteristics. Cpk = 1.33 = capable (common target), ~63 PPM defects, standard for most industries. Cpk = 2.0 = excellent (Six Sigma level), ~0.002 PPM defects, near-perfect. Why baseline matters: (1) Project justification—if Cpk = 1.5 already good, maybe not worth improving; if Cpk = 0.6 terrible, strong justification. (2) Target setting—Current Cpk = 0.8, Goal Cpk = 1.33, need ~40% variation reduction. (3) Before/after comparison—Baseline Cpk = 0.8 (15% defects), After Cpk = 1.4 (1% defects), proof of success. (4) Prioritization—focus on Process B (Cpk = 0.6) not Process A (Cpk = 1.5). Option B is wrong—root causes in Analyze. Option C is wrong—control charts in Control. Option D is wrong—ROI in Define/Charter.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-4.2.2",
+    "estimated_time_seconds": 90
+  },
+  {
+    "module": "4.2",
+    "module_name": "Measure Phase",
+    "question": "A team collects 30 data points and wants to understand the distribution. What should they do first?",
+    "type": "multiple_choice",
+    "options": [
+      "Create a histogram to visualize the distribution shape—this reveals whether data is normal, skewed, or bimodal, guiding which statistical tools to use",
+      "Immediately calculate Cpk without looking at the data",
+      "Skip visualization and go straight to root cause analysis",
+      "Assume the data is normally distributed"
+    ],
+    "correct_answer": 0,
+    "explanation": "Visualization before calculation is fundamental. A histogram reveals patterns that summary statistics miss. Why histogram first: (1) Check normality—many Six Sigma tools (Cp, Cpk, control charts) assume normal distribution. Bell curve = normal (use standard tools). Skewed = not normal (transform data or use non-parametric). Bimodal = two populations mixed (separate before analyzing). (2) Spot outliers—one bar way out = outlier to investigate. (3) Identify problems: Right-skewed pattern shows most values low with some high outliers—investigate highs. Bimodal pattern shows two peaks—two different populations mixed, separate by shift/operator/product. Truncated pattern shows cut-off at spec limit—operators sorting/reworking, hiding defects. Normal pattern shows symmetric bell curve—proceed with standard analysis. What you'd miss without histogram: Just calculating mean = 10.0mm, σ = 2.0mm looks fine! But histogram reveals bimodal (two peaks at 8mm and 12mm), indicating two processes mixed. Need to separate and analyze each. Without histogram, you'd analyze the wrong thing and waste weeks. Sequence: Plot histogram, check normality, identify outliers, then calculate statistics, then assess capability. Tools beyond histogram include box plots, normal probability plots, run charts. But histogram first—quickest way to 'see' your data. Option B is wrong—Cpk on non-normal data produces meaningless results. Option C is wrong—root cause in Analyze after measuring baseline. Option D is wrong—never assume normality, always verify.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-4.2.3",
+    "estimated_time_seconds": 90
+  },
+  {
+    "module": "4.2",
+    "module_name": "Measure Phase",
+    "question": "What is the purpose of creating an operational definition in the Measure phase?",
+    "type": "multiple_choice",
+    "options": [
+      "To define exactly how to measure something so everyone measures the same way, ensuring consistent, repeatable data collection",
+      "To define the project scope",
+      "To calculate process capability",
+      "To identify root causes"
+    ],
+    "correct_answer": 0,
+    "explanation": "Operational definitions eliminate ambiguity, ensuring everyone collects data the same way. Without them, 'measurement' becomes opinion. Problem example: Team measures 'defects.' Person A counts 15, Person B counts 23, Person C counts 8. Same process, wildly different numbers! Why? Person A counted only visible defects, B counted visible + functional, C counted only critical. Everyone had different definitions! Operational definition components: (1) Characteristic—what measuring: 'Surface scratches on painted panels.' (2) Test method—how to measure: 'Visual inspection under 100-watt lamp at 12 inches.' (3) Criteria—pass/fail: 'Scratch >2mm long visible to naked eye = defect.' (4) Equipment—tools used: '100-watt lamp, ruler, defined lighting.' (5) Procedure—step-by-step: Clean panel, position under lamp, inspect at 12 inches, measure visible scratches, record >2mm as defects. Example transformation: Vague: 'Measure customer satisfaction.' Operational: 'Customer satisfaction measured via post-service survey sent within 24 hours. Satisfaction = % rating 4 or 5 on Question 3 \"Overall satisfaction.\" Responses 1-3 = dissatisfied, 4-5 = satisfied. Calculate monthly.' Why operational definitions matter: consistency (everyone measures same thing same way), repeatability (same person twice gets same result), reproducibility (different people get same result), training (new members know what to do), legal/regulatory (audit trail). Option B is wrong—scope in Define. Option C is wrong—capability uses data, but definitions ensure data valid. Option D is wrong—root causes in Analyze.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-4.2.4",
+    "estimated_time_seconds": 90
+  },
+  {
+    "module": "4.2",
+    "module_name": "Measure Phase",
+    "question": "A process has specs 10.0mm ± 0.5mm. Current: Mean = 10.3mm, σ = 0.15mm. What should the team focus on first?",
+    "type": "multiple_choice",
+    "options": [
+      "Center the process (reduce mean from 10.3 to 10.0)—the process is off-center, easier to fix than reducing variation; centering immediately improves Cpk",
+      "Reduce standard deviation first—variation is always the top priority",
+      "The process is already perfect—no improvement needed",
+      "Buy new equipment immediately"
+    ],
+    "correct_answer": 0,
+    "explanation": "Distinguish between centering and variation problems—address the easier one first for quick wins. Analysis: Specs 10.0 ± 0.5mm means LSL = 9.5mm, USL = 10.5mm, Target = 10.0mm. Current: Mean = 10.3mm (off-target by 0.3mm), σ = 0.15mm (small variation). Calculate Cpk: min[(10.5-10.3)/(3×0.15), (10.3-9.5)/(3×0.15)] = min[0.44, 1.78] = 0.44. Process capable on lower end (1.78) but terrible on upper end (0.44) because too close to upper spec. If we center without changing variation: Move mean 10.3 → 10.0. New Cpk = min[(10.5-10.0)/(3×0.15), (10.0-9.5)/(3×0.15)] = min[1.11, 1.11] = 1.11. Significant improvement (0.44 → 1.11) with no variation reduction! If we reduce variation without centering: Reduce σ from 0.15 → 0.10 (33% reduction—very difficult!). New Cpk = min[(10.5-10.3)/(3×0.10), (10.3-9.5)/(3×0.10)] = min[0.67, 2.67] = 0.67. Better (0.44 → 0.67) but still poor despite heroic effort. Strategy: Step 1 center process (quick win)—often simple adjustment of settings/recalibration, days to implement, Cpk 0.44 → 1.11 (capable!). Step 2 then reduce variation if needed—more difficult root cause elimination, weeks/months, Cpk 1.11 → 1.33+ (excellent). How to center: adjust machine offset, recalibrate equipment, correct systematic errors—relatively easy and fast. Option B is wrong—variation important but centering delivers bigger immediate impact and is easier. Option C is wrong—Cpk = 0.44 terrible. Option D is wrong—new equipment expensive, adjust existing first.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-4.2.5",
+    "estimated_time_seconds": 95
+  },
+  {
+    "module": "4.3",
+    "module_name": "Analyze Phase",
+    "question": "What is the primary goal of the Analyze phase in DMAIC?",
+    "type": "multiple_choice",
+    "options": [
+      "To identify and verify root causes of the problem using data and statistical analysis—determining WHY the problem exists before jumping to solutions",
+      "To implement solutions immediately",
+      "To collect baseline data",
+      "To create the project charter"
+    ],
+    "correct_answer": 0,
+    "explanation": "Analyze forces teams to identify true root causes rather than treating symptoms or jumping to pet solutions. Treating symptoms (ineffective): Problem = high defects. Solution = inspect 100% and rework. Result = defects keep occurring, rework costs persist. Treating root causes (effective): Problem = high defects. Analysis reveals temperature variation causes defects. Solution = install temperature control. Result = defects eliminated at source, no rework needed. Analyze tools: (1) Data stratification—break down by categories (shift, operator, machine, product) to identify correlations. 80% of defects on Night Shift → investigate night shift. (2) Pareto analysis—80/20 rule: 20% of causes create 80% of problems. Focus on vital few. 3 of 12 defect types cause 75% of defects. (3) Cause-and-effect diagrams—brainstorm potential causes across Man, Machine, Material, Method, Measurement, Environment. Organize thinking systematically, generate hypotheses to test. (4) Hypothesis testing—'Night shift has higher defects because temperature isn't controlled.' Test: compare night vs day temperature data. Confirm or reject with data. (5) Regression/correlation—does X correlate with Y? Temperature correlates with defects (r = 0.85) indicates causation to verify. The discipline: Prove it with data. Prevents mistakes like 'I think it's operators' when data shows operator has no effect, or 'we need new equipment' when data shows existing equipment fine when set correctly. Option B is wrong—solutions in Improve after identifying root causes. Option C is wrong—baseline data in Measure before Analyze. Option D is wrong—charter in Define before Analyze.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-4.3.1",
+    "estimated_time_seconds": 90
+  },
+  {
+    "module": "4.3",
+    "module_name": "Analyze Phase",
+    "question": "A team uses the '5 Whys' technique and stops after the third 'Why.' What mistake have they likely made?",
+    "type": "multiple_choice",
+    "options": [
+      "They stopped too soon—5 Whys should continue until reaching a root cause you can control (actionable); stopping early often identifies symptoms rather than true root causes",
+      "5 Whys should always stop at exactly the third Why",
+      "5 Whys is not a valid Six Sigma tool",
+      "They should have started with solutions, not questions"
+    ],
+    "correct_answer": 0,
+    "explanation": "5 Whys is simple but often poorly executed. The number '5' is a guideline—the goal is reaching an actionable root cause. Stopping too soon (ineffective): Problem = machine stopped. Why #1 = overload tripped. Why #2 = bearing seized. Why #3 = no lubrication. STOP → Solution: lubricate bearing. Result: bearing seizes again next month (problem returns). Continuing to root cause (effective): Problem = machine stopped. Why #1 = overload tripped. Why #2 = bearing seized. Why #3 = no lubrication. Why #4 = lubrication schedule not followed. Why #5 = no preventive maintenance system. ROOT CAUSE → Solution: implement preventive maintenance with visual management. Result: problem doesn't recur. How to know you've reached root cause: (1) It's actionable—you can fix it. Not actionable: 'Operators make mistakes' (vague). Actionable: 'No standard work instructions at workstation.' (2) It's controllable—you have authority. Not controllable: 'Vendor quality poor' (might not control vendor). Controllable: 'No incoming inspection to catch vendor defects.' (3) Addressing it prevents recurrence—'If we fix this, will problem stop permanently?' Yes = likely root cause. No = keep asking Why. Common mistakes: Stopping at symptoms ('part was defective'), blaming people ('operator error—fix system instead'), using exactly 5 (sometimes need 3, sometimes 7—stop when actionable), accepting vague answers ('it just happens'—probe deeper), single cause assumption (often multiple root causes). Better: combine 5 Whys with data to verify each Why. Option B is wrong—'5' is guideline, stop at actionable cause. Option C is wrong—5 Whys is valid, widely-used. Option D is wrong—solutions come after root cause identification.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-4.3.2",
+    "estimated_time_seconds": 90
+  },
+  {
+    "module": "4.3",
+    "module_name": "Analyze Phase",
+    "question": "A team creates a Fishbone diagram with 30 potential causes. What should they do next?",
+    "type": "multiple_choice",
+    "options": [
+      "Use data to determine which potential causes actually correlate with the problem—Fishbone generates hypotheses, but you must test them with data to identify true root causes",
+      "Implement solutions for all 30 causes immediately",
+      "Pick the most obvious cause without testing",
+      "Declare the Fishbone diagram is the final analysis"
+    ],
+    "correct_answer": 0,
+    "explanation": "Fishbone diagrams are excellent brainstorming tools but just the starting point. Every potential cause is a hypothesis that must be tested with data. Process: Step 1 Brainstorm (completed)—using 6Ms: Man (people), Machine (equipment), Material (inputs), Method (process), Measurement, Mother Nature (environment). Result: 30 potential causes. Step 2 Prioritize hypotheses (next)—can't test all 30 simultaneously. Quick screening: Plausibility? Team knowledge? Ease of testing? Result: Top 5-10 to test. Step 3 Test with data (critical)—Hypothesis: 'Operator experience affects defect rate.' Test: compare experienced (>2 years) = 3% defects vs new (<6 months) = 18% defects. Conclusion: CONFIRMED—experience matters. Hypothesis: 'Machine age affects defect rate.' Test: compare old (>10 years) = 8% vs new (<2 years) = 9%. Conclusion: REJECTED—age doesn't matter. Testing methods: (1) Data stratification—separate by suspected cause, compare results. (2) Scatter plots—plot suspected cause vs defect rate, look for correlation. (3) Statistical tests—t-tests, ANOVA, chi-square for significance. (4) Designed experiments (DOE)—systematically test multiple factors. Step 4 Focus on verified root causes—after testing, find 3 causes confirmed (real), 27 rejected (don't affect problem). Focus improvement on 3 real causes, not all 30 hypotheses. The danger of skipping data validation: might implement solutions for 'obvious' causes that don't matter, waste time and money, problem persists because real root causes unaddressed. With testing: focus on proven root causes, solutions work, efficient resource use. Option B is wrong—implementing 30 solutions wasteful, most hypotheses wrong. Option C is wrong—'obvious' causes often wrong, validate with data. Option D is wrong—Fishbone generates hypotheses, data validation essential.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-4.3.3",
+    "estimated_time_seconds": 95
+  },
+  {
+    "module": "4.3",
+    "module_name": "Analyze Phase",
+    "question": "Data analysis reveals 80% of defects occur during night shift, but the supervisor says 'My team is experienced and follows procedures.' What should the team do?",
+    "type": "multiple_choice",
+    "options": [
+      "Follow the data—investigate night shift conditions (lighting, temperature, fatigue, material quality) rather than accepting the supervisor's opinion; data reveals truth opinions might miss",
+      "Accept the supervisor's explanation—supervisors always know best",
+      "Blame the night shift workers immediately",
+      "Ignore the data and look elsewhere"
+    ],
+    "correct_answer": 0,
+    "explanation": "Data trumps opinion. People naturally defend their areas, but data doesn't lie (if collected properly). The supervisor might be unaware (not on floor during all incidents), defensive (doesn't want to look bad), or honestly mistaken (sees what expects). The data shows 80% correlation with night shift—too strong to ignore. How to investigate without blame: Step 1 Verify data—double-check collection, ensure consistent day vs night measurement, rule out bias. Step 2 Go to Gemba—observe night shift: What's different from day? Are procedures actually followed? What conditions differ? Step 3 Look for systemic differences, not blame. Possible systemic causes (not 'bad workers'): Environmental—lighting worse at night (harder to see defects), temperature control issues (HVAC set back), noise different. Material—different batch delivered at shift change (different quality), material stored differently, different supplier delivers to night shift. Process—less supervision (1 supervisor vs 3 during day), maintenance scheduled during day (night uses tired equipment), QA lab closed at night (delayed feedback). Training—night shift has more new employees (turnover), less training oversight, mentors unavailable. Support—engineering/technical support only during day, slower problem resolution at night, can't get quick answers. Example outcome: Data = 80% defects on night shift. Initial assumption: 'Night workers careless.' Actual root cause: Material batches delivered 11 PM (shift change chaos), no incoming inspection at night (QA closes 6 PM), defective raw material goes directly to production. Solution: adjust delivery to daytime, add spot-check for night shift, implement pull system for old material first. Result: defect rate equalizes—no 'bad workers,' just bad system. Six Sigma mindset: Wrong thinking 'Who caused this?' (blame). Right thinking 'What caused this?' (system). Wrong approach: accept authority opinions. Right approach: follow data, investigate objectively. Key: 85% of problems from system, 15% from people—start with system. Option B is wrong—authority doesn't override data. Option C is wrong—blaming prevents finding root causes, look for system issues. Option D is wrong—80% correlation too strong to ignore, must investigate.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-4.3.4",
+    "estimated_time_seconds": 95
+  },
+  {
+    "module": "4.3",
+    "module_name": "Analyze Phase",
+    "question": "Why is it important to verify root causes with data before moving to the Improve phase?",
+    "type": "multiple_choice",
+    "options": [
+      "Because implementing solutions based on incorrect root causes wastes time and resources while the real problem persists—verification prevents solving the wrong problem",
+      "Verification is optional and can be skipped to save time",
+      "Root causes are always obvious and don't need verification",
+      "Data has no role in root cause verification"
+    ],
+    "correct_answer": 0,
+    "explanation": "Verification is the difference between guessing and knowing. Skipping leads to implementing solutions that don't work, wasting months and damaging credibility. Cost of wrong solutions: Without verification—Team believes 'equipment old, causing defects.' Solution: buy new equipment ($500K). Result: defects persist (equipment wasn't problem). Loss: $500K wasted, 6 months lost, problem unsolved. With verification—Hypothesis: 'Equipment age causes defects.' Data test: compare old vs new equipment defect rates. Result: no correlation (old = 8%, new = 9%). Conclusion: age NOT root cause. Continue investigating. Eventually find: humidity causes defects. Solution: install humidity control ($50K). Result: defects eliminated. Savings: $450K + problem solved. Verification methods: (1) Correlation analysis—does suspected cause correlate with problem? Plot temperature vs defect rate. Strong correlation (r = 0.85) = likely root cause. No correlation (r = 0.05) = not root cause. (2) Hypothesis testing—statistical tests (t-test, ANOVA, chi-square). p-value < 0.05 = factor significant. (3) Designed experiments—systematically vary suspected causes, measure effect, identify which actually matter. (4) Before/after comparison—change suspected cause, measure if problem changes. If problem remains = not root cause. (5) Process behavior over time—when did problem start? What changed then? Temporal correlation suggests causation. Example verification: Problem = customer complaints increased 200%. Suspected causes: new product design (3 months ago), new training (6 months ago), material supplier change (1 month ago). Verification: plot complaints over time, jumped sharply 1 month ago, matches supplier change not design/training, test new vs old material, new has 3× defect rate. Verified root cause: supplier change. Solution: work with supplier on quality or switch. Without verification, would have wasted time redesigning product or revamping training. The discipline: 'Prove it before you bet on it.' Brainstorm hypotheses, test with data, verify before implementing, focus resources on proven root causes. Option B is wrong—skipping is #1 reason projects fail, never skip. Option C is wrong—root causes rarely obvious, assumptions often wrong. Option D is wrong—data IS the tool for verification, without it you're guessing.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-4.3.5",
+    "estimated_time_seconds": 95
+  },
+  {
+    "module": "4.4",
+    "module_name": "Improve & Control Phases",
+    "question": "Why should Six Sigma teams pilot solutions before full implementation?",
+    "type": "multiple_choice",
+    "options": [
+      "Pilots test solutions on small scale, identifying problems and refining approach before committing resources to full-scale implementation—reducing risk and increasing success probability",
+      "Pilots are unnecessary—if analysis is correct, solutions will always work",
+      "Pilots waste time—implement everywhere immediately",
+      "Pilots are only needed for manufacturing, not services"
+    ],
+    "correct_answer": 0,
+    "explanation": "Piloting embodies the scientific method: test hypothesis (solution) in controlled way before broad implementation. Risk reduction: No pilot = implement across 10 production lines → fails → massive disruption, cost, rollback. With pilot = test on 1 line → discover issues → refine → then scale → success. Learning opportunity: Pilots reveal unexpected problems, necessary adjustments, training needs, resource requirements, stakeholder resistance, implementation complexity. Discover these on small scale (cheap, easy to fix) rather than large scale (expensive, disruptive). Proof of concept: Pilot demonstrates 'this solution works,' builds confidence, overcomes skepticism, secures resources, gets stakeholder buy-in. How to pilot: (1) Define scope—small enough: limited risk if fails. Large enough: representative of full process. Example: one line, one shift, one product. (2) Set objectives—what measure? What = success? How long? (3) Plan carefully—document current state (baseline), implement in pilot, measure results, compare to baseline and goal. (4) Learn and refine—what worked? What problems? What adjustments? Refine based on learning. (5) Scale if successful—if meets objectives: scale to full. If fails: revise and re-pilot or abandon. Example: Problem = high defects (15%). Root cause = temperature variation. Solution = automated temperature control. Without pilot: install on all 10 lines ($1M). Discover: settings wrong, requires daily calibration, operators need training. Scramble to fix across all lines. Chaos, downtime, cost overruns. With pilot: install on Line 1 ($100K). Run 2 weeks. Discover same issues but small scale. Refine: adjust settings, create calibration procedure, develop training. Test refined solution on Line 1: success (defects 15% → 2%). Now scale to 9 remaining lines with proven, refined solution. Smooth deployment, budget on track. Pilot structure (PDCA): Plan design pilot, Do run and collect data, Check analyze results, Act refine then scale OR abandon. Red flags (don't scale): results don't meet objectives, negative consequences discovered, high stakeholder resistance, worse cost-benefit, harder implementation than expected. Green lights (proceed): meets/exceeds objectives, problems identified and resolved, stakeholders supportive, ROI confirmed, implementation proven. Option B is wrong—best analysis can miss real-world complications, piloting catches them. Option C is wrong—'implement everywhere' risks catastrophic failure, pilot first. Option D is wrong—piloting valuable everywhere: manufacturing, healthcare, services, offices.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-4.4.1",
+    "estimated_time_seconds": 95
+  },
+  {
+    "module": "4.4",
+    "module_name": "Improve & Control Phases",
+    "question": "What is the purpose of a Control Plan in the Control phase?",
+    "type": "multiple_choice",
+    "options": [
+      "To document how the improved process will be monitored and maintained over time, ensuring improvements don't decay back to old performance levels",
+      "To control employee behavior through punishment",
+      "To create the project charter",
+      "To identify root causes"
+    ],
+    "correct_answer": 0,
+    "explanation": "Control Plan answers 'How do we keep this improvement permanent?' It's the difference between temporary gains and sustained results. Problem without control: Month 1-6 = project implements solution, defects drop 15% → 3%. Month 7 = attention moves to next project. Month 8 = standards slip, defects 4%. Month 10 = more decay, defects 6%. Month 12 = back to 12% defects. All work wasted! Control Plan includes: (1) Process parameters to monitor—what indicates process health? Example: temperature (critical quality variable). (2) Measurement methods—how to measure, operational definitions, tools/equipment, frequency (hourly, daily, weekly). (3) Control limits—acceptable variation? When to act? Example: temperature 85°F ± 5°F (action if outside). (4) Responsibilities—who monitors? Analyzes? Takes corrective action? (5) Reaction plans—if out of control, what actions? Escalation procedures? Documentation requirements? (6) Control charts—visual showing performance over time, signals when process drifts, enables early intervention. Example Control Plan: Process = injection molding (improved from 15% to 3% defects). Parameters: Temperature (target 185°F, limits 180-190°F, hourly, digital thermometer, operator monitors, reaction = adjust heater, notify supervisor if persists). Pressure (target 2000 PSI, limits 1900-2100 PSI, each cycle, pressure gauge, operator monitors, reaction = adjust pressure, log event). Defect rate (target <3%, limit <5%, daily, visual inspection n=50, QA monitors, reaction = stop production, root cause analysis if >5%). Audits and reviews: Daily = operators check key parameters. Weekly = supervisor reviews control charts. Monthly = management reviews overall performance. Quarterly = audit adherence to Control Plan. Training and documentation: train all operators on Control Plan, post at workstation, update as process changes, include in standard operating procedures. Goal: institutionalize improvements—make them visible (everyone sees performance), maintained (monitoring prevents decay), sustainable (built into daily work), recoverable (quick corrective action if drift). Common failures: Too complex (50 parameters, nobody follows—fix: focus on vital few). No ownership (unclear responsibilities, assume someone else monitors—fix: specific names assigned). No consequences (out-of-control not addressed, plan ignored—fix: link to performance reviews, escalation). Static (never updated, becomes irrelevant—fix: regular reviews, updates). Option B is wrong—Control about process monitoring, not employee punishment. Option C is wrong—charter in Define, not Control. Option D is wrong—root causes in Analyze, not Control.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-4.4.2",
+    "estimated_time_seconds": 100
+  },
+  {
+    "module": "4.4",
+    "module_name": "Improve & Control Phases",
+    "question": "What is the main purpose of a control chart in the Control phase?",
+    "type": "multiple_choice",
+    "options": [
+      "To distinguish between normal process variation (common cause) and unusual variation (special cause), signaling when corrective action is needed",
+      "To show the project charter",
+      "To calculate ROI",
+      "To replace all other measurements"
+    ],
+    "correct_answer": 0,
+    "explanation": "Control charts are one of Six Sigma's most powerful tools—they separate signal from noise, preventing under-reaction (missing real problems) and over-reaction (tampering with stable processes). The fundamental problem: All processes vary. Is this variation normal, or does it indicate a problem? Without control chart: Measurement today 10.2mm, tomorrow 10.5mm. Question: Is 10.5mm a problem? Should I adjust? Answer: ??? (no way to know). Result: either ignore real problems or constantly adjust stable processes (tampering), making variation worse! With control chart: Plot measurements over time with statistically-calculated limits: Centerline (CL) = process average. Upper Control Limit (UCL) = +3 standard deviations. Lower Control Limit (LCL) = -3 standard deviations. Two variation types: (1) Common Cause (Normal)—random, inherent to process, points within limits, no special patterns. Action: leave alone (don't tamper). (2) Special Cause (Abnormal)—something unusual happened, points outside limits OR patterns within limits. Action: investigate and fix root cause. Control chart rules for special cause: Rule 1 = point outside limits (something unusual at that time). Rule 2 = 8+ consecutive points one side of centerline (process shifted, not centered). Rule 3 = 6+ consecutive points trending up/down (process drifting—tool wear, temperature change). Rule 4 = unusual patterns (cycling, alternating, clustering). Example interpretation: Day 1-10 = points scattered randomly within limits. Interpretation: common cause, process stable. Action: none needed. Day 11 = point above UCL. Interpretation: special cause. Action: investigate what happened Day 11. Discovery: new material batch. Root cause: material out of spec. Fix: return material, improve incoming inspection. Day 12-20 = back within limits. Interpretation: corrective action worked. Action: continue monitoring. The power: know when to act. Scenario A (Overreaction/Tampering): every measurement slightly different → adjust each time → create more variation. Control chart prevents: shows variation normal (common cause), no adjustment needed. Scenario B (Under-reaction): gradual upward trend → ignore because in spec → eventually produces defects. Control chart catches: trend pattern signals problem early, before defects. Types: Variable data (measurements) = X-bar and R chart, Individuals chart. Attribute data (counts) = p-chart (proportion defective), c-chart (count of defects). Benefits: (1) Early warning—detect problems before defects. (2) Prevent tampering—distinguish normal from problems. (3) Visual—anyone sees status at glance. (4) Data-driven—decisions based on statistical evidence. (5) Continuous—ongoing monitoring, not one-time. Implementation: calculate limits from baseline (20-30 points), plot new data daily/hourly/per batch, investigate special causes immediately, recalculate limits after improvements. Option B is wrong—control charts monitor process, not display charter. Option C is wrong—ROI in Define/business case, not control charts. Option D is wrong—control charts complement other measurements, don't replace.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-4.4.3",
+    "estimated_time_seconds": 100
+  },
+  {
+    "module": "4.4",
+    "module_name": "Improve & Control Phases",
+    "question": "After implementing improvements, a team documents savings of $500K annually. What should they do to ensure benefits are sustained?",
+    "type": "multiple_choice",
+    "options": [
+      "Implement Control Plan, train new procedures, assign ownership, conduct regular audits, track performance over time—institutionalizing improvements into daily work",
+      "Declare victory and move to next project immediately",
+      "Assume improvements will maintain themselves",
+      "Delete all documentation so it doesn't get lost"
+    ],
+    "correct_answer": 0,
+    "explanation": "Sustaining improvements is where many Six Sigma projects fail. Initial success is relatively easy—maintaining long-term requires deliberate institutionalization. Why improvements decay: (1) People forget—procedures not documented, training not provided to new employees, key people leave and knowledge lost. (2) Priorities shift—management attention elsewhere, 'old way' seems easier under pressure, shortcuts creep back. (3) Process drifts—small changes accumulate, equipment degrades, standards not maintained. (4) Nobody monitors—assume improvements stuck, don't measure anymore, problems invisible until major. How to sustain (institutionalization): (1) Document everything—Standard Operating Procedures (SOPs) updated, work instructions step-by-step at workstations, Control Plan for monitoring/reaction, training materials for current and future employees. (2) Train thoroughly—all current employees on new procedures, certification/competency checks, new hire onboarding includes improvements, refresher training periodically. (3) Assign clear ownership—Process owner (overall responsibility), daily monitors (check key parameters), auditors (verify compliance). Names not roles ('John Smith monitors temperature' not 'someone monitors'). (4) Build into existing systems—performance reviews include adherence to new standards, audits add improved process to checklist, meetings review control charts in daily/weekly meetings, IT systems update to support new workflow. (5) Create visual management—control charts posted at workstation, performance dashboards visible to all, green/yellow/red indicators show status, before/after photos remind why change matters. (6) Conduct regular audits—Daily: operators self-check. Weekly: supervisor spot-checks. Monthly: management review. Quarterly: formal audit. Ask: procedures followed? Results sustained? Control plan effective? Issues emerged? (7) Track long-term performance—don't stop measuring after project ends: continue monitoring key metrics, track savings realization, document benefits over time, celebrate milestones (6 months, 1 year). (8) Continuous improvement—treat Control phase as new baseline: current performance now standard, look for next opportunity, PDCA cycle continues. Example institutionalization: Project reduced defects 15% → 3%, saving $500K/year. Sustaining actions: Documentation (updated SOPs with temperature control procedures, laminated control chart instructions at each workstation, 30-minute training module). Training (certified all 45 operators with competency test, added to new hire checklist, monthly refresher in team meetings). Ownership (Process owner: Production Manager Jane Smith, Daily monitoring: each operator self-check, Weekly review: Shift Supervisors, Monthly audit: Quality Manager). Integration (temperature control in daily startup checklist, control charts reviewed in daily production meeting, defect rate KPI on management dashboard, adherence in operator performance reviews). Results after 2 years: defect rate sustained 2-3%, $1M total savings realized, new employees trained in improved methods from day 1, process became 'the way we work' (cultural change). Option B is wrong—moving on immediately guarantees decay, improvements need support to stick. Option C is wrong—nothing maintains itself, active management required. Option D is wrong—documentation critical for training and sustainability, never delete!",
+    "difficulty": "beginner",
+    "learning_objective": "LO-4.4.4",
+    "estimated_time_seconds": 100
+  },
+  {
+    "module": "4.4",
+    "module_name": "Improve & Control Phases",
+    "question": "A Six Sigma project is complete and successful. What is the purpose of the final project closeout and celebration?",
+    "type": "multiple_choice",
+    "options": [
+      "To document lessons learned, transfer knowledge, recognize team contributions, and provide closure—celebrating success motivates future improvement efforts and reinforces culture change",
+      "Celebration is unprofessional and should be skipped",
+      "Closeout is unnecessary—just stop working on it",
+      "Only celebrate if the project saved over $1 million"
+    ],
+    "correct_answer": 0,
+    "explanation": "Project closeout and celebration are critical for organizational learning, culture development, and sustaining continuous improvement momentum. Why formal closeout matters: (1) Document lessons learned—What worked well: effective tools/methods, successful strategies, helpful team dynamics, good stakeholder engagement. What could improve: challenges encountered, mistakes made (without blame), better approaches discovered, unhelpful tools. Why this matters: future teams benefit from experience, avoid mistakes, replicate successes. (2) Transfer knowledge—Deliverables: final report documenting project, updated process documentation, training materials, Control Plan, data and analysis. Knowledge transfer: present results to stakeholders, train process owners, share learnings across organization, add to knowledge management system. (3) Verify results—Confirm: goals achieved (3% defects vs 15% target), savings realized ($500K vs projected), customer satisfaction improved, sustainability mechanisms in place. (4) Release resources—Formally: thank team members, release to other projects, document time invested, close budget. Why celebration is important: (1) Recognition and motivation—People worked hard (often beyond regular jobs): recognize contributions publicly, thank individuals specifically, acknowledge sacrifices (late nights, weekends), create sense of accomplishment. Result: team members willing to volunteer for future projects. (2) Cultural reinforcement—Celebration sends message: 'Continuous improvement is valued,' 'Success is recognized,' 'Management pays attention to CI results,' 'This is how we do things here.' Without celebration: 'Nobody cares about improvement—why bother?' (3) Visibility—Public celebration: shows organization what's possible, inspires other teams, attracts volunteers for future projects, demonstrates leadership commitment. (4) Emotional closure—Projects are emotional journeys: celebration provides closure, marks transition from 'project mode' to 'sustain mode,' allows team to feel pride, creates positive memories. How to celebrate appropriately: Small projects (team lunch/breakfast, thank-you email from leadership, certificate, recognition in team meeting). Medium projects (town hall presentation, award ceremony, team outing, newsletter feature, thank-you gift). Large projects $500K+ (executive recognition, bonus/reward if policy allows, professional development opportunity, conference presentation, promotion consideration). Match celebration to impact—but always celebrate! Example closeout agenda: Week 1 (final data collection, verify goal achievement, complete documentation). Week 2 (lessons learned session with team, create final report, schedule presentation). Week 3 (present to stakeholders, transfer to process owners, submit for recognition). Week 4 (celebration event, thank-you communications, archive project materials, release team). The broader impact: Well-closed projects create knowledge base for future, motivated improvement community, visible CI culture, momentum for next projects. Poorly closed projects create wasted learning, burned-out volunteers, invisible improvements, declining participation. The lesson: how you finish matters as much as what you achieve. Option B is wrong—skipping celebration demotivates teams and undermines culture, always recognize success. Option C is wrong—informal endings waste learning and don't provide closure, formalize closeout. Option D is wrong—all successful projects deserve recognition, celebrate wins of all sizes to build culture.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-4.4.5",
+    "estimated_time_seconds": 100
+  }
+]

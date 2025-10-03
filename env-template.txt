@@ -1,0 +1,20 @@
+# ============================================================================
+# CI MASTER SUITE - ENVIRONMENT VARIABLES
+# ============================================================================
+# Copy this content to a new file called .env.local in your project root
+
+# Supabase Configuration
+NEXT_PUBLIC_SUPABASE_URL=https://cqdmqpkqslsiegtvzctr.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNxZG1xcGtxc2xzaWVndHZ6Y3RyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkzNjA3OTgsImV4cCI6MjA3NDkzNjc5OH0.6ssGo1SJKcHbObnOZEpGC66LwhcGogfunXcBsi7FL0I
+SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNxZG1xcGtxc2xzaWVndHZ6Y3RyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1OTM2MDc5OCwiZXhwIjoyMDc0OTM2Nzk4fQ.afHFxVPYtArJCJC-rM58cFKUnnIWDH6VSPs-c94-e6g
+
+# App Configuration  
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+
+# Optional: Analytics & Monitoring (add later if needed)
+# NEXT_PUBLIC_POSTHOG_KEY=your-posthog-key
+# NEXT_PUBLIC_POSTHOG_HOST=https://app.posthog.com
+# SENTRY_DSN=your-sentry-dsn
+
+# Optional: Email Configuration (add later if needed)
+# RESEND_API_KEY=your-resend-key

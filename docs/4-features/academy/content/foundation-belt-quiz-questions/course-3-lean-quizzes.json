@@ -1,0 +1,342 @@
+[
+  {
+    "module": "3.1",
+    "module_name": "The 8 Wastes (DOWNTIME)",
+    "question": "A hospital emergency department has patients waiting an average of 45 minutes before seeing a doctor, even though the actual examination takes only 15 minutes. Which of the 8 Wastes does this primarily represent?",
+    "type": "multiple_choice",
+    "options": [
+      "Waiting—patients spend time waiting without value being added; this waste consumes resources (space, staff attention) and creates customer dissatisfaction",
+      "Transportation—moving patients between areas",
+      "Overproduction—treating too many patients",
+      "Defects—errors in diagnosis"
+    ],
+    "correct_answer": 0,
+    "explanation": "This scenario clearly illustrates Waiting waste—one of the most visible and frustrating wastes in service environments. The 45-minute wait adds zero value from the patient's perspective. They don't receive any treatment, diagnosis, or care during this time—they simply wait.\n\n**Why Waiting is wasteful:** Resources are consumed (waiting room space, reception staff monitoring, patient anxiety increasing) without creating value. The examination itself is only 15 minutes, meaning 75% of the patient's time is pure waste. In Lean terminology, only 25% of time is value-added.\n\n**Root causes of waiting in healthcare:**\n- Unbalanced workflow (bottlenecks at triage or examination)\n- Batch processing (waiting for multiple patients before starting)\n- Poor scheduling (appointments don't match actual patient flow)\n- Variation in examination times (some take 5 minutes, others 45)\n- Equipment or room unavailability\n\n**Improvement approaches:**\n- Level-load patient flow throughout the day\n- Implement pull system (patient pulls doctor when ready)\n- Reduce variation through standard work\n- Cross-train staff to eliminate bottlenecks\n- Use visual management to see wait times\n\nWhy other options are wrong:\n\nOption B (Transportation): While patients may move between areas, the 45-minute wait is the primary waste, not the movement itself.\n\nOption C (Overproduction): The hospital isn't treating too many patients—they're making existing patients wait too long.\n\nOption D (Defects): No errors are described. The process works correctly but inefficiently.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-3.1.1",
+    "estimated_time_seconds": 75
+  },
+  {
+    "module": "3.1",
+    "module_name": "The 8 Wastes (DOWNTIME)",
+    "question": "A manufacturing plant produces 1,000 units daily based on forecasts, but customers only order 700 units daily. The extra 300 units go into inventory 'just in case' demand increases. Which waste is this, and why is it considered the 'worst' waste?",
+    "type": "multiple_choice",
+    "options": [
+      "Overproduction—creating more than customers need is the worst waste because it generates and hides other wastes (excess inventory, defects not caught quickly, tied-up cash, extra handling)",
+      "Inventory—having too much stock",
+      "Motion—workers moving to store excess product",
+      "Over-processing—working too hard"
+    ],
+    "correct_answer": 0,
+    "explanation": "Overproduction is producing more, sooner, or faster than the customer needs. Taiichi Ohno (Toyota Production System creator) called it the 'worst waste' because it generates and conceals other wastes.\n\n**Why overproduction is worst:** Making 300 extra units daily creates:\n\n1. **Inventory waste**: 300 units stored daily = 1,500 units after a week\n2. **Transportation waste**: Moving excess to warehouse\n3. **Motion waste**: Workers handling inventory multiple times\n4. **Defects hidden**: If design changes, all 1,500 stored units are now defective\n5. **Capital tied up**: Cash invested in unsold inventory\n6. **Space consumed**: Warehouse costs money\n7. **Obsolescence risk**: Products may expire or become outdated\n\n**Root causes:**\n- 'Keep machines busy' mentality\n- Long changeover times (so make large batches)\n- Unreliable processes (make extra 'just in case')\n- Reward systems based on output volume\n- Forecast-driven vs. customer-driven production\n\n**Lean solution:** Pull systems—produce only when customer orders. Result: 700 units produced, 700 units sold, zero waste inventory.\n\nWhy other options are incomplete:\n\nOption B (Inventory): Inventory is a symptom. Overproduction is the root cause creating that inventory.\n\nOption C (Motion): Motion waste occurs, but it's secondary to overproduction.\n\nOption D (Over-processing): This means adding unnecessary features or steps, not producing extra quantity.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-3.1.2",
+    "estimated_time_seconds": 80
+  },
+  {
+    "module": "3.1",
+    "module_name": "The 8 Wastes (DOWNTIME)",
+    "question": "An office processes expense reports through 7 approval signatures, taking 2 weeks, even though analysis shows 3 signatures would provide adequate control. Which waste is this?",
+    "type": "multiple_choice",
+    "options": [
+      "Over-processing—doing more work than customers require or adding features/steps that don't add value",
+      "Waiting—because reports sit on desks",
+      "Transportation—moving reports between offices",
+      "Non-utilized talent—not using employee skills"
+    ],
+    "correct_answer": 0,
+    "explanation": "Over-processing means doing more than the customer requires, adding unnecessary features, or using more expensive methods than needed. The 4 extra signatures are classic over-processing—they add cost and time without adding value.\n\n**Characteristics of over-processing:**\n- Working to higher tolerance than needed (making parts to ±0.001mm when ±0.01mm works)\n- Excessive approvals (like this scenario)\n- Redundant inspections\n- Over-engineered solutions\n- Using expensive equipment when simple tools work\n- Creating reports nobody reads\n\n**Why 7 signatures is waste:** If 3 signatures provide adequate control, signatures 4-7 add:\n- Zero additional value\n- ~10 extra days of delay\n- Four people's time consumed\n- Increased error risk (misrouting, lost documents)\n- Employee frustration\n\n**Root causes:**\n- 'More is better' thinking\n- Lack of trust\n- Unclear authority/responsibility\n- CYA (cover your assets) culture\n- Never questioning legacy processes\n\n**Lean solution:** Eliminate unnecessary approvals. Implement:\n- Tiered approval limits ($0-500: manager, $500-5000: director, >$5000: VP)\n- Spot audits instead of 100% inspection\n- Empower employees within guidelines\n\nResult: 2 weeks → 2 days, same control, happier employees.\n\nWhy other options are secondary:\n\nOption B (Waiting): Reports do wait, but over-processing (unnecessary signatures) causes that waiting.\n\nOption C (Transportation): Reports move between offices, but the real waste is requiring unnecessary approvals.\n\nOption D: While talent isn't utilized optimally, the primary waste is over-processing.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-3.1.3",
+    "estimated_time_seconds": 75
+  },
+  {
+    "module": "3.1",
+    "module_name": "The 8 Wastes (DOWNTIME)",
+    "question": "A factory floor layout requires parts to travel 500 feet through the facility—from receiving, to warehouse, to production, to inspection, to shipping. Which waste does this represent, and what's the Lean ideal?",
+    "type": "multiple_choice",
+    "options": [
+      "Transportation—moving materials doesn't add value; the Lean ideal is cellular layouts where parts flow directly from operation to operation with minimal movement",
+      "Motion—workers walking too much",
+      "Waiting—parts sitting during transport",
+      "Inventory—too much stock"
+    ],
+    "correct_answer": 0,
+    "explanation": "Transportation waste is moving products, materials, or information more than absolutely necessary. The customer doesn't care how far parts traveled through your facility—they care about the finished product. All movement is non-value-added (though some may be necessary).\n\n**Why transportation is waste:**\n- Consumes time (parts in transit = lead time)\n- Requires resources (forklifts, fuel, drivers)\n- Adds risk (damage during handling)\n- Hides problems (long distances mask inefficiency)\n- Costs money (labor, equipment, space)\n\n**Common causes:**\n- Poor facility layout (functional vs. cellular)\n- Batch-and-queue processing\n- Centralized warehouses far from use points\n- Multiple inspection points\n- Disconnected process steps\n\n**Lean solution—Cellular layouts:**\nArrange equipment in process sequence (U-shaped or linear cells):\n- Parts flow operation-to-operation with minimal handling\n- Distance: 500 feet → 20 feet\n- Lead time: Hours → Minutes\n- One-piece flow possible\n\n**Traditional layout (Functional):**\nAll lathes together, all mills together → parts zigzag across facility\n\n**Lean layout (Cellular):**\nLathe → Mill → Grind → Inspect (sequential, close together)\n\nToyota's famous \"spaghetti diagram\" exercise maps current material movement (looks like tangled spaghetti) vs. future state (clean, straight lines).\n\nWhy other options differ:\n\nOption B (Motion): Motion is people moving; transportation is materials/products moving.\n\nOption C (Waiting): Parts may wait during transport, but the primary waste is unnecessary movement.\n\nOption D (Inventory): Not the main issue here—the problem is distance traveled.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-3.1.4",
+    "estimated_time_seconds": 75
+  },
+  {
+    "module": "3.1",
+    "module_name": "The 8 Wastes (DOWNTIME)",
+    "question": "An organization has engineers with Six Sigma Black Belt training working on tasks that could be done by technicians, while improvement projects go unstaffed. Which waste is this?",
+    "type": "multiple_choice",
+    "options": [
+      "Non-utilized talent—failing to engage employees' skills, ideas, and creativity; this wastes human potential and misses improvement opportunities",
+      "Waiting—projects waiting for resources",
+      "Over-processing—using expensive resources unnecessarily",
+      "Defects—poor resource allocation"
+    ],
+    "correct_answer": 0,
+    "explanation": "Non-utilized talent (sometimes called 'underutilized people') is the 8th waste, added later to the original 7. It's about failing to tap into employees' full capabilities—their problem-solving skills, creativity, local knowledge, and improvement ideas.\n\n**This waste manifests as:**\n- Wrong skill level for task (PhD doing data entry)\n- Not asking for employee input (\"you're not paid to think\")\n- Ignoring improvement suggestions\n- Limiting jobs to narrow tasks\n- Not training or developing people\n- Hierarchical decision-making (only bosses decide)\n\n**Why it's wasteful:**\n- Expensive talent misallocated (engineer salary for technician work)\n- Employee frustration and disengagement\n- High turnover (talented people leave)\n- Improvement opportunities missed (frontline workers see problems daily but aren't engaged)\n- Organization doesn't develop capability\n\n**In this scenario:**\n- Black Belts doing technician work = wasting $50K-100K salary premium\n- Improvement projects unstaffed = wasting potential $500K+ in savings\n- Engineers frustrated = retention risk\n- Problems persist that could be solved\n\n**Lean solution:**\n- Match work to skill level\n- Create improvement time (20% rule: spend 20% on improvement)\n- Implement suggestion systems\n- Empower frontline problem-solving\n- Develop people systematically\n- Respect for people = leveraging their minds, not just hands\n\nToyota's principle: \"Build people before building products.\"\n\nWhy other options are secondary:\n\nOption B: Projects do wait, but the root waste is not utilizing talent properly.\n\nOption C: There is inefficiency, but the core waste is human potential unrealized.\n\nOption D: Not a defect—it's deliberate (though wasteful) allocation.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-3.1.5",
+    "estimated_time_seconds": 80
+  },
+  {
+    "module": "3.2",
+    "module_name": "5S Methodology",
+    "question": "A maintenance department has tools scattered across multiple locations, and technicians spend 20 minutes per shift searching for the right tool. Which 5S step would most directly address this problem?",
+    "type": "multiple_choice",
+    "options": [
+      "Set in Order (Seiton)—organizing and arranging items so everything has a designated location and can be found quickly",
+      "Sort (Seiri)—removing unnecessary items",
+      "Shine (Seiso)—cleaning the workspace",
+      "Standardize (Seiketsu)—creating standards"
+    ],
+    "correct_answer": 0,
+    "explanation": "Set in Order (Seiton) is about organizing what remains after Sort. The principle: \"A place for everything, and everything in its place.\" This directly solves the search time problem.\n\n**Set in Order techniques:**\n- Shadow boards (tool outlines show where each tool belongs)\n- Labels and signs (clear identification)\n- Color coding (red tools = electrical, blue = mechanical)\n- Point-of-use storage (tools stored where used)\n- Visual controls (can see at a glance what's missing)\n- Kanban for consumables (automatic reorder triggers)\n\n**For this maintenance department:**\n\nBefore (current state):\n- Tools in random locations\n- 20 min/shift searching = 100 min/week = 87 hours/year wasted\n- Frustration, delays, duplicate purchases\n\nAfter Set in Order:\n- Shadow board at each workstation\n- Tool outlines show location\n- Missing tools instantly visible\n- Search time: 20 minutes → 1 minute\n- Savings: 80+ hours/year per technician\n\n**Why the sequence matters:**\n1. **Sort first**: Remove broken, duplicate, obsolete tools (reduces what needs organizing)\n2. **Then Set in Order**: Organize remaining tools logically\n3. **Then Shine**: Clean and inspect during organization\n4. **Then Standardize**: Document the system\n5. **Then Sustain**: Maintain discipline\n\nWhy other options don't directly solve the problem:\n\nOption A (Sort): Helps by reducing total items, but doesn't organize them.\n\nOption C (Shine): Cleaning is good but doesn't create tool locations.\n\nOption D (Standardize): Comes after Set in Order—you standardize the organization system you've created.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-3.2.1",
+    "estimated_time_seconds": 75
+  },
+  {
+    "module": "3.2",
+    "module_name": "5S Methodology",
+    "question": "During a 5S Sort (Seiri) activity, a team debates whether to keep equipment that hasn't been used in 18 months but 'might be needed someday.' What should guide their decision?",
+    "type": "multiple_choice",
+    "options": [
+      "The 'Red Tag' approach—tag questionable items, move to holding area, and if not used within 30-90 days, remove permanently; this balances caution with waste elimination",
+      "Keep everything 'just in case' because storage space is cheap",
+      "Immediately discard anything not used in the last month",
+      "Let the highest-ranking person decide based on gut feeling"
+    ],
+    "correct_answer": 0,
+    "explanation": "The Red Tag strategy is a cornerstone of effective Sort (Seiri) activities. It addresses the natural human tendency to keep things 'just in case' while still eliminating genuine waste.\n\n**Red Tag Process:**\n\n1. **Tag questionable items** with red tags noting:\n   - Item description\n   - Date tagged\n   - Reason for doubt\n   - Owner/department\n\n2. **Move to holding area** (separate space)\n\n3. **Set holding period** (typically 30-90 days)\n\n4. **Track usage**: If someone needs it, they retrieve it (tracked)\n\n5. **Dispose after period**: Items still there after 90 days are:\n   - Sold\n   - Scrapped\n   - Donated\n   - Archived (if legal/historical value)\n\n**Why this works:**\n- **Reduces anxiety**: \"We're not throwing it away immediately\"\n- **Generates data**: \"We had 50 red-tagged items, used 3, disposed 47\"\n- **Proves the point**: Next time, team trusts the process more\n- **Protects against error**: Genuinely needed items can be retrieved\n\n**For the 18-month unused equipment:**\nRed-tag it. If truly needed, someone will retrieve it within 30 days. If it sits 90 days, that confirms it's waste—eliminate it and free the space for value-adding work.\n\n**Results of Sort:**\n- 30-50% space freed (typical)\n- Easier to find needed items\n- Reduced inventory costs\n- Improved safety (less clutter)\n\nWhy other options fail:\n\nOption B: \"Storage is cheap\" ignores hidden costs (space, searching, maintenance, inventory carrying costs).\n\nOption C: Too aggressive—risks discarding truly needed items, creating fear of 5S.\n\nOption D: Gut feelings perpetuate waste—use data and defined processes instead.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-3.2.2",
+    "estimated_time_seconds": 75
+  },
+  {
+    "module": "3.2",
+    "module_name": "5S Methodology",
+    "question": "A production area completes Sort and Set in Order with dramatic improvements, but three months later, the workspace has returned to clutter and disorganization. What went wrong?",
+    "type": "multiple_choice",
+    "options": [
+      "They failed at Sustain (Shitsuke)—the 5th S that maintains discipline through audits, visual management, and accountability; without Sustain, improvements don't last",
+      "Sort and Set in Order were done incorrectly",
+      "The team wasn't committed initially",
+      "5S doesn't work in production environments"
+    ],
+    "correct_answer": 0,
+    "explanation": "This is the classic 5S failure pattern: strong start, poor finish. The 5th S—Sustain (Shitsuke)—is often the hardest and most neglected, yet it's critical for lasting results.\n\n**Why improvements decay without Sustain:**\n- No accountability → people revert to old habits\n- No audits → problems invisible until major\n- No reinforcement → 5S seems unimportant\n- No discipline → standards ignored\n- Leadership moves on → 5S becomes 'flavor of the month'\n\n**Sustain mechanisms:**\n\n**1. Regular audits:**\n- Daily team audits (5 minutes)\n- Weekly supervisor audits\n- Monthly management audits\n- Scoring system (visual, public)\n- Trend tracking (improving/declining?)\n\n**2. Visual management:**\n- Audit scores displayed publicly\n- Before/after photos maintained\n- Standard work photos at workstations\n- Responsibility assignments visible\n\n**3. Accountability:**\n- 5S time built into daily schedule (last 10 min of shift)\n- 5S performance in evaluations\n- Recognition for excellence\n- Corrective action for decline\n\n**4. Leadership involvement:**\n- Managers participate in audits\n- 5S included in gemba walks\n- Resources allocated for maintenance\n- 5S as organizational value, not program\n\n**5. Continuous improvement:**\n- Treat declining scores as problems to solve\n- Update standards as process changes\n- Share best practices across areas\n\n**For this production area:**\nImplement weekly team audits using simple checklist, post scores visibly, and address declining scores immediately. Result: Sustain the gains.\n\nWhy other options miss the point:\n\nOption B: Sort/Set were likely done well (dramatic initial improvements prove it).\n\nOption C: Initial commitment was strong—problem is sustaining commitment.\n\nOption D: 5S works everywhere if Sustained properly.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-3.2.3",
+    "estimated_time_seconds": 80
+  },
+  {
+    "module": "3.2",
+    "module_name": "5S Methodology",
+    "question": "What is the primary purpose of Shine (Seiso), the 3rd S, beyond simply making the workplace look clean?",
+    "type": "multiple_choice",
+    "options": [
+      "Shine combines cleaning with inspection—abnormalities become visible (leaks, wear, damage) enabling early detection and prevention of problems",
+      "Shine is only about appearance to impress visitors",
+      "Shine keeps management happy with neat facilities",
+      "Shine reduces the need for maintenance"
+    ],
+    "correct_answer": 0,
+    "explanation": "Shine (Seiso) is often misunderstood as mere housekeeping. In Lean, cleaning IS inspection—the act of cleaning reveals problems early when they're easy to fix.\n\n**Shine = Cleaning + Inspection:**\n\nWhen you clean equipment/workspace daily, you discover:\n- **Oil leaks**: Small leak spotted early → preventive seal replacement ($50)\n  - Missed: Major failure → unplanned downtime ($5,000)\n- **Loose bolts**: Tighten during cleaning → no problem\n  - Missed: Vibration → equipment damage\n- **Worn parts**: Visible during cleaning → planned replacement\n  - Missed: Catastrophic failure → safety incident\n- **Product debris**: Clean daily → quality maintained\n  - Missed: Debris contaminates next batch → scrapped product\n- **Damage**: Chips, cracks spotted immediately\n  - Missed: Crack propagates → equipment failure\n\n**The Lean principle: \"Clean to inspect, inspect to detect, detect to correct.\"**\n\n**Implementation:**\n- Operators clean their own equipment (5-10 min daily)\n- Cleaning checklists include inspection points\n- Abnormalities tagged/reported immediately\n- Simple fixes done on spot\n- Complex issues escalated to maintenance\n\n**Benefits:**\n- Equipment reliability increases (30-50% typical)\n- Unplanned downtime decreases\n- Equipment life extends\n- Quality improves (contaminants removed)\n- Operators develop equipment knowledge\n- Pride in workspace increases\n\n**TPM connection:**\nShine is foundational to Total Productive Maintenance (TPM). Autonomous Maintenance starts with operators cleaning/inspecting their equipment.\n\nWhy other options are superficial:\n\nOption B: Visitor impressions are a benefit, but not the purpose.\n\nOption C: Management satisfaction is secondary to problem detection.\n\nOption D: Shine doesn't reduce maintenance need—it enables predictive/preventive maintenance, shifting from reactive to proactive.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-3.2.4",
+    "estimated_time_seconds": 75
+  },
+  {
+    "module": "3.2",
+    "module_name": "5S Methodology",
+    "question": "A company implements 5S but treats it as a one-time cleanup event. Six months later, the workspace has deteriorated. What fundamental principle of 5S did they misunderstand?",
+    "type": "multiple_choice",
+    "options": [
+      "5S is not an event but a management system—it requires ongoing practice, discipline, and continuous improvement; Sustain and Standardize make it permanent",
+      "5S only works if done perfectly the first time",
+      "5S is only for manufacturing, not for offices",
+      "5S should only be done when management requests it"
+    ],
+    "correct_answer": 0,
+    "explanation": "This misconception—\"5S is an event\"—is why many 5S initiatives fail. Organizations hold a \"5S Day,\" clean everything, take photos, and declare victory. Within weeks, everything reverts.\n\n**5S is a management system, not an event:**\n\n**Event thinking:**\n- One-time cleanup\n- \"We did 5S\" (past tense)\n- No ongoing process\n- No standards maintained\n- Deterioration inevitable\n\n**System thinking:**\n- Daily discipline\n- \"We practice 5S\" (present tense)\n- Continuous improvement\n- Standards evolve\n- Sustained results\n\n**What makes 5S a system:**\n\n**1. Standardize (4th S):**\n- Document best practices\n- Visual standards (photos)\n- Responsibility assignments\n- Procedures for maintaining\n- Standards updated as improvements discovered\n\n**2. Sustain (5th S):**\n- Daily practice (built into work)\n- Regular audits\n- Visual management\n- Accountability\n- Leadership engagement\n\n**3. PDCA cycle:**\n- Plan: Set 5S standards\n- Do: Implement and maintain daily\n- Check: Audit and measure\n- Act: Improve standards, address gaps\n\n**Comparison:**\n\n**Month 1 (event approach):** Great cleanup, everything organized\n**Month 6 (event approach):** Back to clutter\n\n**Month 1 (system approach):** Good cleanup, standards set\n**Month 6 (system approach):** Better than Month 1 through continuous improvement\n\n**Cultural shift:**\nFrom: \"Let's do 5S\" (implies finite project)\nTo: \"5S is how we work\" (implies ongoing practice)\n\n**Implementation:**\n- Integrate 5S into daily routines\n- Make time for 5S (last 10 minutes of shift)\n- Audit regularly\n- Address deterioration immediately\n- Recognize excellence\n- Improve standards continuously\n\nWhy other options are wrong:\n\nOption B: Perfection isn't required—continuous improvement is.\n\nOption C: 5S works everywhere (offices, hospitals, warehouses).\n\nOption D: 5S should be self-directed, not management-driven events.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-3.2.5",
+    "estimated_time_seconds": 80
+  },
+  {
+    "module": "3.3",
+    "module_name": "Value Stream Mapping",
+    "question": "In Value Stream Mapping, what do the two most important metrics—Lead Time and Value-Added Time—reveal about a process?",
+    "type": "multiple_choice",
+    "options": [
+      "The ratio reveals efficiency: most processes have 5-10% value-added time and 90-95% waste (waiting, moving, storing); this gap represents improvement opportunity",
+      "Lead time and value-added time should always be equal",
+      "These metrics only apply to manufacturing processes",
+      "A good process has 50% value-added time"
+    ],
+    "correct_answer": 0,
+    "explanation": "Lead Time vs. Value-Added Time comparison is Value Stream Mapping's most powerful insight, quantifying exactly how much waste exists.\n\n**Definitions:**\n\n**Lead Time (Total Time):**\nTime from customer request to delivery—includes everything (value-added AND waste)\n\n**Value-Added Time (Process Time):**\nTime actually transforming the product in ways customers value\n\n**The Shocking Reality:**\nTypical ratios:\n- **Manufacturing**: 5-10% value-added\n- **Healthcare**: 1-5% value-added\n- **Service/Office**: 1-5% value-added\n\n**Example—Order Processing:**\n\nLead Time: 14 days (customer order → product shipped)\nValue-Added Time: 2 hours (actual processing time)\n\nRatio: 2 hours / (14 days × 8 hours) = 2/112 = 1.8% value-added\n\n98.2% of time is waste! (waiting, approvals, batching, movement)\n\n**What the gap represents:**\n\nLarge gap (< 10% value-added):\n- Huge improvement opportunity\n- Process dominated by waiting, batching, delays\n- Focus: Eliminate non-value-added time\n- Potential: 50-90% lead time reduction possible\n\nSmall gap (> 25% value-added):\n- Process is relatively efficient\n- Focus: Reduce variation, improve quality\n- Potential: Incremental improvements\n\n**Improvement strategies:**\n- Eliminate waiting (biggest waste)\n- Reduce batch sizes\n- Remove approval steps\n- Collocate process steps\n- Implement pull systems\n- Automate information flow\n\n**Realistic improvement:**\nTypical VSM projects:\n- Current: 5% value-added\n- Future: 15-30% value-added\n- Lead time reduced 50-80%\n\nWhy other options are wrong:\n\nOption B: They're never equal—some lead time is always non-value-added.\n\nOption C: These metrics apply universally (any process).\n\nOption D: Even 50% is rare—most processes have 1-10% value-added.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-3.3.1",
+    "estimated_time_seconds": 85
+  },
+  {
+    "module": "3.3",
+    "module_name": "Value Stream Mapping",
+    "question": "When creating a current-state Value Stream Map, what is the most important rule for ensuring accuracy?",
+    "type": "multiple_choice",
+    "options": [
+      "Go to Gemba (the actual place) and observe the real process—don't map what's supposed to happen or what people say happens; map what actually happens",
+      "Copy the process flowchart from the documentation",
+      "Ask managers how the process works",
+      "Map the ideal process so you have a target"
+    ],
+    "correct_answer": 0,
+    "explanation": "\"Go to Gemba\" (go to the actual place) is fundamental to accurate Value Stream Mapping. The current-state map must reflect reality, not assumptions, documentation, or wishful thinking.\n\n**Why Gemba is critical:**\n\n**What documentation says:**\n- Process flow: A → B → C → D\n- Lead time: 3 days\n- Batch size: 10 units\n\n**What actually happens (at Gemba):**\n- Process flow: A → wait → B → rework → C → wait for approval → D → exception handling\n- Lead time: 8 days (includes waiting, rework, exceptions)\n- Batch size: varies (10, 50, 100 depending on operator)\n\n**The gap between documented and actual:**\n- Workarounds (\"we don't actually follow that procedure\")\n- Informal handoffs\n- Hidden waiting times\n- Unreported rework loops\n- Exception processes (30% take alternate paths)\n- Tribal knowledge not documented\n\n**Gemba mapping process:**\n\n1. **Walk the process**: Follow one unit from start to finish\n2. **Time it**: Actual lead time and process times\n3. **Count inventory**: Work-in-process between steps\n4. **Observe**: What actually happens (not what should happen)\n5. **Ask workers**: \"Show me\" not \"tell me\"\n6. **Measure**: Cycle times, changeover times, uptime\n7. **Document**: Capture reality, including problems\n\n**Benefits of Gemba-based mapping:**\n- Reveals actual problems (which you can fix)\n- Workers see you care about reality\n- Discovers root causes\n- Builds credibility\n- Creates accurate baseline\n\n**Common mistake:**\nManagers map in conference room based on assumptions → VSM shows 3-day lead time → Reality is 8 days → Improvement plan fails because it solves wrong problem.\n\nWhy other options fail:\n\nOption B: Documentation is outdated/idealized—reality differs.\n\nOption C: Managers often don't know actual details (they're removed from gemba).\n\nOption D: That's future-state mapping, not current-state.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-3.3.2",
+    "estimated_time_seconds": 80
+  },
+  {
+    "module": "3.3",
+    "module_name": "Value Stream Mapping",
+    "question": "On a Value Stream Map, what does an inventory triangle with a number in it represent, and why is this important?",
+    "type": "multiple_choice",
+    "options": [
+      "The triangle shows Work-In-Process (WIP) inventory between steps; high WIP indicates waiting/batching and increases lead time—it's a key target for improvement",
+      "The triangle is just a decoration with no meaning",
+      "The triangle shows equipment count",
+      "The triangle represents quality defects"
+    ],
+    "correct_answer": 0,
+    "explanation": "Inventory triangles are one of VSM's most revealing symbols. They show where work piles up between process steps—a clear indicator of waste and improvement opportunity.\n\n**Inventory Triangle Symbol:**\n- Triangle with number = Work-In-Process (WIP) quantity\n- Example: △ 500 = 500 units waiting between steps\n\n**What WIP reveals:**\n\n**High WIP (hundreds or thousands of units):**\n- Process steps are disconnected\n- Batch processing (wait for full batch)\n- Upstream overproduction\n- Long changeover times (so make large batches)\n- Push system (produce to forecast, not demand)\n- Buffer for unreliability\n\n**Lead time impact:**\nLittle's Law: Lead Time = WIP / Throughput\n\nExample:\n- WIP = 500 units\n- Throughput = 100 units/day\n- Lead Time = 500 / 100 = 5 days\n\nThat 500-unit pile adds 5 days of lead time—pure waiting!\n\n**Improvement opportunity:**\n\n**Current State:**\nStep A → △ 500 → Step B → △ 300 → Step C\nLead time: 8 days\n\n**Future State:**\nStep A → △ 50 → Step B → △ 30 → Step C\nLead time: 0.8 days (90% reduction)\n\n**How to reduce WIP:**\n- Implement pull systems (produce only when next step pulls)\n- Reduce batch sizes\n- Level-load production\n- Reduce changeover times (SMED)\n- Connect steps with flow\n- Eliminate overproduction\n\n**Why WIP is wasteful:**\n- Capital tied up (cash in inventory)\n- Space consumed (warehousing)\n- Quality issues hidden (defects discovered late)\n- Obsolescence risk\n- Damage risk\n- Management complexity\n\nLean ideal: Minimum WIP, maximum flow.\n\nWhy other options are wrong:\n\nOption B: Every VSM symbol has specific meaning—triangle = WIP inventory.\n\nOption C: Equipment is shown as process boxes, not triangles.\n\nOption D: Defects might be noted separately, but triangles specifically show WIP inventory quantities.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-3.3.3",
+    "estimated_time_seconds": 80
+  },
+  {
+    "module": "3.3",
+    "module_name": "Value Stream Mapping",
+    "question": "What is the purpose of creating a future-state Value Stream Map before implementing improvements?",
+    "type": "multiple_choice",
+    "options": [
+      "The future-state map creates a shared vision of the ideal flow, enables gap analysis to identify specific improvements needed, and provides a target for implementation planning",
+      "Future-state mapping is optional—just start implementing improvements immediately",
+      "Future-state maps are only for impressing management",
+      "Future-state maps should show perfect automation regardless of feasibility"
+    ],
+    "correct_answer": 0,
+    "explanation": "Future-state mapping bridges current reality and desired state, turning VSM from analysis tool into implementation roadmap.\n\n**Why future-state mapping matters:**\n\n**1. Shared Vision:**\nCurrent-state: Everyone sees problems differently\nFuture-state: Team aligns on target condition\n\nWithout shared vision: Team pulls in different directions\nWith shared vision: Coordinated improvement\n\n**2. Gap Analysis:**\nComparing current → future identifies specific changes:\n\nExample:\n- Current: Batch size = 1,000 units\n- Future: Batch size = 50 units\n- Gap: Need changeover time reduction (SMED project)\n\n- Current: 5 days WIP\n- Future: 0.5 days WIP\n- Gap: Implement pull system (kanban)\n\n**3. Implementation Roadmap:**\nFuture-state answers \"what\" and \"why\"\nImplementation plan answers \"how\" and \"when\"\n\n**Future-State Design Principles:**\n\n1. **Produce to takt time** (customer demand rate)\n2. **Develop continuous flow** where possible\n3. **Use pull systems** where flow isn't possible\n4. **Level the production schedule** (heijunka)\n5. **Distribute improvement burden** evenly\n\n**Realistic future-state:**\n- Achievable within 6-12 months\n- Doesn't require massive capital investment\n- Uses Lean principles, not automation\n- 50-80% lead time reduction typical\n- 30-50% labor reduction typical\n\n**Common mistake:**\nFuture-state shows expensive automation → Not affordable → Project dies\n\nBetter approach:\nFuture-state shows flow/pull/leveling → Affordable → Gets implemented\n\n**The cycle:**\nCurrent State → Future State → Implementation → Results → New Current State → Next Future State\n\nContinuous improvement!\n\nWhy other options are wrong:\n\nOption B: Jumping to implementation without vision causes scattered, ineffective efforts.\n\nOption C: Future-state is a working tool, not presentation material.\n\nOption D: Future-state must be feasible—unrealistic maps don't get implemented.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-3.3.4",
+    "estimated_time_seconds": 85
+  },
+  {
+    "module": "3.3",
+    "module_name": "Value Stream Mapping",
+    "question": "A Value Stream Map shows 15 days lead time with only 2 hours of value-added time. Where should the improvement team focus first?",
+    "type": "multiple_choice",
+    "options": [
+      "Focus on eliminating the non-value-added time (waiting, batching, delays)—the 14.9 days of waste—rather than optimizing the 2 hours of value-added time",
+      "Focus only on making the 2 hours of value-added work faster through automation",
+      "The process is fine—15 days is acceptable",
+      "Focus equally on all aspects of the process"
+    ],
+    "correct_answer": 0,
+    "explanation": "This scenario illustrates Lean's prioritization principle: attack the biggest waste first. With 99% of time being non-value-added, that's where the opportunity lies.\n\n**The Math:**\n- Lead time: 15 days = 360 hours\n- Value-added time: 2 hours\n- Non-value-added time: 358 hours (99.4%)\n\n**Where's the opportunity?**\n\nOption A: Reduce non-value-added time by 50%\n- Eliminate 179 hours of waste\n- New lead time: 181 hours (7.5 days)\n- Result: 50% lead time reduction\n\nOption B: Reduce value-added time by 50% (through automation)\n- Save 1 hour\n- New lead time: 359 hours (still ~15 days)\n- Result: <1% lead time reduction\n\nClearly, Option A delivers 50x more impact!\n\n**Why non-value-added time is easier to reduce:**\n- Often requires no capital (just better flow)\n- Can eliminate waste entirely (not just reduce it)\n- Uses Lean principles (pull, flow, leveling)\n- Quick implementation\n- Minimal risk\n\n**Why value-added time is harder to reduce:**\n- Often requires automation (expensive)\n- Physical/technical limits exist\n- Long implementation time\n- High risk\n- Diminishing returns\n\n**Practical improvement sequence:**\n\n**Phase 1 (0-6 months): Attack non-value-added time**\n- Eliminate approval delays: 3 days saved\n- Reduce batch sizes: 5 days saved\n- Implement pull: 4 days saved\n- Co-locate steps: 1 day saved\n- Result: 15 days → 2 days lead time\n\n**Phase 2 (6-18 months): Optimize value-added time**\n- Now worth it because flow is optimized\n- Automate if justified\n- Standardize work\n- Reduce variation\n\n**Lean philosophy:**\n\"Don't automate waste—eliminate it first, then automate if needed.\"\n\nWhy other options are wrong:\n\nOption B: Automating value-added work barely moves the needle when 99% of time is waiting.\n\nOption C: 99% waste is not acceptable—massive improvement opportunity.\n\nOption D: Focus creates impact. Equal effort on everything dilutes results.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-3.3.5",
+    "estimated_time_seconds": 85
+  },
+  {
+    "module": "3.4",
+    "module_name": "Kanban & Pull Systems",
+    "question": "What is the fundamental difference between a 'push' system and a 'pull' system in manufacturing?",
+    "type": "multiple_choice",
+    "options": [
+      "Push produces based on forecasts/schedules (make then try to sell); Pull produces based on actual customer orders (sell then make)—Pull prevents overproduction and excess inventory",
+      "Push and pull are the same thing with different names",
+      "Push is always better because it keeps machines busy",
+      "Pull only works in automotive manufacturing"
+    ],
+    "correct_answer": 0,
+    "explanation": "Push vs. Pull is one of Lean's most revolutionary concepts, fundamentally changing how production is triggered and controlled.\n\n**Push System (Traditional):**\n\n**Trigger:** Forecast or schedule\n**Logic:** \"Make 1,000 units because we predict we'll sell them\"\n**Flow:** Upstream pushes work to downstream whether ready or not\n**Result:** Build inventory \"just in case\"\n\n**Problems:**\n- Forecasts are often wrong → wrong products made\n- Overproduction (the worst waste)\n- Excess inventory (ties up cash, consumes space)\n- Long lead times (work waits in queues)\n- Quality issues hidden (defects discovered late)\n- Inflexibility (committed to scheduled production)\n\n**Pull System (Lean):**\n\n**Trigger:** Actual customer order or consumption\n**Logic:** \"Customer bought 1 unit, so make 1 unit to replenish\"\n**Flow:** Downstream pulls from upstream only when needed\n**Result:** Build only what's needed, when needed\n\n**Benefits:**\n- Zero overproduction\n- Minimal inventory (free cash, less space)\n- Short lead times (less waiting)\n- Quality issues surface immediately\n- Flexibility (respond to actual demand)\n\n**Example—Grocery Store:**\n\n**Push:** Stock 1,000 loaves based on forecast → Sell 700 → 300 spoil (waste)\n\n**Pull:** Stock 100 loaves → Sell 100 → Restock 100 → Repeat → Zero spoilage\n\n**Example—Manufacturing:**\n\n**Push:** Schedule says \"make 500 units of Product A\" → Make 500 → Customers want Product B → 500 units of A sit in inventory\n\n**Pull:** Customer orders Product B → Make Product B → Deliver → No excess inventory\n\n**The Supermarket Analogy:**\nPull systems work like supermarkets—product consumed from shelf triggers replenishment, maintaining minimum necessary stock.\n\nWhy other options are wrong:\n\nOption B: They're fundamentally different philosophies with opposite results.\n\nOption C: Keeping machines busy creates overproduction waste. Lean prefers idle equipment to excess inventory.\n\nOption D: Pull works everywhere—manufacturing, healthcare, services, construction.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-3.4.1",
+    "estimated_time_seconds": 85
+  },
+  {
+    "module": "3.4",
+    "module_name": "Kanban & Pull Systems",
+    "question": "In a kanban pull system, what does a kanban card signal, and how does it control production?",
+    "type": "multiple_choice",
+    "options": [
+      "The kanban card signals 'produce/move X quantity of Y item'—it's a visual authorization that limits WIP and triggers replenishment only when inventory is consumed",
+      "Kanban cards are just inventory labels with no control function",
+      "Kanban cards tell workers what time to take breaks",
+      "Kanban cards are used only for tracking defects"
+    ],
+    "correct_answer": 0,
+    "explanation": "Kanban cards are the signaling mechanism that makes pull systems work. \"Kanban\" literally means \"signal card\" in Japanese.\n\n**How Kanban Works:**\n\n**Setup:**\n- Part X has 3 kanban cards\n- Each card represents 1 container of 50 units\n- Total authorized inventory: 3 × 50 = 150 units\n\n**The Flow:**\n\n1. **Downstream consumes parts**: Takes container of 50 units\n2. **Removes kanban card**: Card travels back to upstream\n3. **Card signals**: \"Produce 50 units to replenish\"\n4. **Upstream produces**: Makes exactly 50 units\n5. **Attaches card to new container**: Returns to downstream\n6. **Cycle repeats**: Continuous flow\n\n**Key Principle: \"No kanban = Don't produce\"**\n\nIf downstream isn't consuming, no cards return, upstream stops producing. This prevents overproduction!\n\n**WIP Control:**\n\nNumber of kanbans = Maximum WIP allowed\n\n- Too many kanbans → Excess inventory\n- Too few kanbans → Stockouts\n- Right amount → Smooth flow, minimum inventory\n\n**Kanban Calculation:**\n\nNumber of kanbans = (Demand during lead time + Safety stock) / Container quantity\n\nExample:\n- Demand: 100 units/day\n- Lead time: 2 days\n- Safety stock: 50 units\n- Container: 50 units/container\n\nKanbans needed: (100×2 + 50) / 50 = 5 kanban cards\n\n**Types of Kanbans:**\n\n1. **Production kanban**: Authorization to make\n2. **Withdrawal kanban**: Authorization to move\n3. **Signal kanban**: Triggers batch production\n4. **Electronic kanban**: Digital signals\n\n**Visual Control:**\nKanban cards (or bins, or lights) provide visual status:\n- All cards at downstream = fully stocked\n- All cards at upstream = everything consumed (problem!)\n- Cards flowing = healthy system\n\n**Benefits:**\n- Limits inventory automatically\n- Visual (anyone can see status)\n- Simple (no complex scheduling)\n- Self-regulating\n- Highlights problems immediately\n\nWhy other options are wrong:\n\nOption B: Kanban cards actively control production—that's their primary purpose.\n\nOption C: Break scheduling is unrelated to kanban.\n\nOption D: While defects might stop kanban flow, cards primarily control production/movement.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-3.4.2",
+    "estimated_time_seconds": 85
+  },
+  {
+    "module": "3.4",
+    "module_name": "Kanban & Pull Systems",
+    "question": "A company wants to implement pull systems but has very long equipment changeover times (4 hours to switch products). What must they address first?",
+    "type": "multiple_choice",
+    "options": [
+      "Reduce changeover times using SMED (Single-Minute Exchange of Dies)—long changeovers force large batches, which prevent pull systems from working; need quick changeovers for small-batch pull",
+      "Pull systems will work fine with long changeovers",
+      "Cancel the pull system implementation",
+      "Buy more equipment to avoid changeovers"
+    ],
+    "correct_answer": 0,
+    "explanation": "Long changeover times are a common barrier to pull systems. Understanding this dependency is critical for successful Lean implementation.\n\n**Why Long Changeovers Prevent Pull:**\n\n**With 4-hour changeover:**\n- Cost per changeover: 4 hours × $500/hour = $2,000\n- To justify cost: Must make large batch (e.g., 1,000 units)\n- Large batch = Long production run = Can't respond to demand variation\n- Result: Push system by necessity (can't afford frequent changeovers)\n\n**What Pull Requires:**\n- Small batch sizes (ideally single-piece flow)\n- Frequent changeovers (respond to actual demand)\n- Flexibility (make what's needed now)\n\n**The Conflict:**\nPull needs small batches → Small batches need frequent changeovers → Frequent changeovers need short changeover times\n\nTherefore: Long changeovers → Large batches → Push system\n\n**Solution: SMED (Single-Minute Exchange of Dies)**\n\nDeveloped by Shigeo Shingo, SMED systematically reduces changeover times:\n\n**SMED Steps:**\n\n1. **Separate internal/external activities:**\n   - Internal: Must be done while machine stopped\n   - External: Can be done while machine running\n   - Move as much as possible to external\n\n2. **Convert internal to external:**\n   - Pre-heat dies while machine runs\n   - Stage tools/materials before stopping\n   - Use quick connectors vs. bolts\n\n3. **Streamline internal activities:**\n   - Eliminate adjustments (standardize settings)\n   - Use quick-change fixtures\n   - Parallel operations (2 people vs. 1)\n\n4. **Eliminate adjustments:**\n   - Use positioning guides\n   - Standardize heights\n   - Visual references\n\n**Results:**\n- Current: 4-hour changeover (240 minutes)\n- After SMED: 15-minute changeover\n- Improvement: 94% reduction (typical)\n\n**Now Pull Works:**\n- Changeover cost: 15 min × $500/hr = $125\n- Economical batch: 50 units\n- Can change over 32× per day if needed\n- Flexibility to make what customers order\n\nWhy other options fail:\n\nOption B: Pull with long changeovers forces large batches, defeating the purpose.\n\nOption C: Don't abandon pull—fix the constraint (changeover time).\n\nOption D: Buying equipment is expensive and doesn't solve root cause. SMED is cheaper and more effective.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-3.4.3",
+    "estimated_time_seconds": 85
+  },
+  {
+    "module": "3.4",
+    "module_name": "Kanban & Pull Systems",
+    "question": "What happens when a pull system reveals a quality problem in an upstream process?",
+    "type": "multiple_choice",
+    "options": [
+      "The problem becomes immediately visible—downstream quickly runs out of good parts, forcing immediate problem-solving; this rapid feedback is a key benefit of pull systems",
+      "The problem gets hidden in inventory for months",
+      "Production continues normally using buffer stock",
+      "Quality problems don't affect pull systems"
+    ],
+    "correct_answer": 0,
+    "explanation": "Pull systems act as a quality amplifier—problems that would hide in push systems become immediately visible, forcing rapid correction. This is by design!\n\n**Pull System Quality Dynamics:**\n\n**Low Inventory = Rapid Problem Detection:**\n\n**Scenario:** Upstream process starts producing defects\n\n**In Push System (high inventory):**\n- Defective units produced Monday\n- Mix with good units in warehouse\n- Downstream discovers defects Friday (5 days later)\n- By then: 1,000 defective units produced\n- Reaction time: 5 days\n- Impact: Massive rework/scrap\n\n**In Pull System (low inventory):**\n- Defective units produced Monday 8 AM\n- Downstream discovers defects Monday 10 AM (2 hours later)\n- Only 20 defective units produced\n- Reaction time: 2 hours\n- Impact: Minimal rework\n\n**The Lean Principle:**\nLow inventory removes the buffer that hides problems, forcing organizations to fix root causes.\n\n**Toyota's Analogy:**\n\"Inventory is like water in a river. Lower the water level (reduce inventory) and rocks (problems) become visible.\"\n\n**What Happens in Practice:**\n\n**Initial Implementation:**\n- Reduce inventory (implement pull)\n- Problems surface constantly\n- Painful period (many stoppages)\n- Team must rapidly solve problems\n- Process improves\n\n**Steady State:**\n- Most problems eliminated\n- Process flows smoothly\n- Low inventory maintained\n- Quality excellent\n- Fast response to issues\n\n**The Andon System:**\nPull systems often use Andon (visual/audio alerts):\n- Worker detects problem\n- Pulls Andon cord\n- Line stops\n- Team swarms problem\n- Fix root cause\n- Resume production\n\nResult: Problems solved immediately, not hidden.\n\n**Cultural Shift Required:**\n\n**Old thinking:** Buffer inventory protects from problems\n**New thinking:** Eliminate problems so buffers aren't needed\n\n**Old response:** \"Add more buffer stock\"\n**New response:** \"Fix the root cause\"\n\nWhy other options miss the point:\n\nOption B: That's push system behavior—pull does the opposite.\n\nOption C: Pull intentionally avoids large buffers to expose problems.\n\nOption D: Quality problems dramatically affect pull—that's the mechanism for forcing improvement.",
+    "difficulty": "beginner",
+    "learning_objective": "LO-3.4.4",
+    "estimated_time_seconds": 85
+  },
+  {
+    "module": "3.4",
+    "module_name": "Kanban & Pull Systems",
+    "question": "A company successfully implements kanban between their warehouse and production floor. What should be their next step to extend pull thinking?",
+    "type": "multiple_choice",
+    "options": [
+      "Extend pull upstream to suppliers and downstream to customers, creating an end-to-end pull system that connects the entire value stream from raw materials to final delivery",
+      "Stop—internal pull is sufficient",
+      "Focus only on making existing kanban faster",
+      "Abandon kanban and return to push scheduling"
+    ],
+    "correct_answer": 0,
+    "explanation": "Successful pull implementation starts internally but must eventually extend across the entire value stream to maximize benefits. This progression is typical in Lean transformations.\n\n**Pull System Evolution:**\n\n**Stage 1: Internal Pull (Starting Point):**\n- Kanban between warehouse ↔ production\n- Benefit: Reduced internal inventory\n- Limitation: Still push from suppliers, still forecast for customers\n\n**Stage 2: Supplier Pull (Extend Upstream):**\n\n**Connect suppliers to internal kanban:**\n- Supplier receives kanban signal when parts consumed\n- Delivers small, frequent shipments\n- Eliminates large inventory deliveries\n- Just-in-time supply\n\n**Benefits:**\n- Further inventory reduction\n- Fresher materials\n- Faster response to changes\n- Shared demand visibility\n- Reduced warehousing\n\n**Example:**\n- Before: Supplier delivers monthly (30-day inventory)\n- After: Supplier delivers daily (1-day inventory)\n- Inventory reduction: 97%\n\n**Stage 3: Customer Pull (Extend Downstream):**\n\n**Connect production to actual customer orders:**\n- Make-to-order vs. make-to-forecast\n- Postponement strategies (customize late)\n- Fast response to demand\n\n**Benefits:**\n- Build exactly what customers want\n- Eliminate finished goods inventory\n- No obsolescence\n- Perfect mix of products\n\n**Stage 4: End-to-End Pull:**\n\n**Integrated value stream:**\nCustomer Order → Triggers Production → Triggers Supplier → Triggers Raw Material\n\nEntire system responds to actual demand, not forecasts.\n\n**Benefits:**\n- Minimal inventory system-wide\n- Fast lead times (days vs. months)\n- Perfect visibility\n- Flexible response\n- Cash freed from inventory\n\n**Implementation Sequence:**\n\n1. **Prove concept internally** (Stage 1)\n2. **Select cooperative supplier** (pilot Stage 2)\n3. **Expand supplier base** gradually\n4. **Build customer pull capability** (Stage 3)\n5. **Integrate entire chain** (Stage 4)\n\n**Challenges:**\n- Supplier readiness (they must implement pull too)\n- Customer willingness (accept lead times)\n- Information systems (share demand data)\n- Transportation (frequent small deliveries)\n- Trust (collaborative relationships)\n\n**Real Example—Dell Computers (1990s-2000s):**\n- Customer orders online → Pull signal\n- Assembly plant builds to order (Stage 1)\n- Suppliers deliver hourly (Stage 2)\n- Result: 6 days inventory vs. competitors' 60 days\n\nWhy other options limit potential:\n\nOption B: Stopping at internal pull leaves 80% of benefits unrealized.\n\nOption C: Speed helps, but extending pull delivers more value.\n\nOption D: Pull is working—build on success, don't abandon it!",
+    "difficulty": "beginner",
+    "learning_objective": "LO-3.4.5",
+    "estimated_time_seconds": 90
+  }
+]

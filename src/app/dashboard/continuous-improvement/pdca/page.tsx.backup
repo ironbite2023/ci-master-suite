@@ -1,0 +1,1037 @@
+'use client'
+
+import { useState, useMemo } from 'react'
+import { useRouter } from 'next/navigation'
+import { Play, Check, RefreshCw, Award, Plus, Trash2, Calendar, Target, TrendingUp, ArrowLeft } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Textarea } from '@/components/ui/textarea'
+import { Badge } from '@/components/ui/badge'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Progress } from '@/components/ui/progress'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { toast } from 'sonner'
+
+/**
+ * PDCA Cycle Manager - Phase 4 Week 1 Implementation
+ * Comprehensive PDCA (Plan-Do-Check-Act) cycle management tool
+ * following Deming's continuous improvement methodology
+ */
+
+type PDCAPhase = 'plan' | 'do' | 'check' | 'act'
+
+interface ActionItem {
+  id: string
+  description: string
+  responsible: string
+  dueDate: string
+  status: 'pending' | 'in_progress' | 'completed'
+}
+
+interface Metric {
+  id: string
+  name: string
+  baseline: number
+  target: number
+  current: number
+  unit: string
+}
+
+interface Issue {
+  id: string
+  description: string
+  severity: 'low' | 'medium' | 'high'
+  resolution: string
+}
+
+interface PDCACycle {
+  name: string
+  objective: string
+  description: string
+  currentPhase: PDCAPhase
+  startDate: string
+  targetDate: string
+  
+  // Plan Phase
+  plan: {
+    hypothesis: string
+    metrics: Metric[]
+    resources: string[]
+    timeline: string
+  }
+  
+  // Do Phase
+  do: {
+    actions: ActionItem[]
+    observations: string[]
+    issues: Issue[]
+  }
+  
+  // Check Phase
+  check: {
+    resultsAnalysis: string
+    variance: number
+    learnings: string[]
+    nextSteps: string[]
+  }
+  
+  // Act Phase
+  act: {
+    decisions: string[]
+    standardization: string[]
+    nextCycle: string
+    documentation: string[]
+  }
+}
+
+const initialCycle: PDCACycle = {
+  name: '',
+  objective: '',
+  description: '',
+  currentPhase: 'plan',
+  startDate: new Date().toISOString().split('T')[0],
+  targetDate: '',
+  plan: {
+    hypothesis: '',
+    metrics: [],
+    resources: [],
+    timeline: ''
+  },
+  do: {
+    actions: [],
+    observations: [],
+    issues: []
+  },
+  check: {
+    resultsAnalysis: '',
+    variance: 0,
+    learnings: [],
+    nextSteps: []
+  },
+  act: {
+    decisions: [],
+    standardization: [],
+    nextCycle: '',
+    documentation: []
+  }
+}
+
+export default function PDCACyclePage() {
+  const router = useRouter();
+
+  const handleBackClick = () => {
+    router.push('/dashboard/continuous-improvement');
+  };
+
+  const [cycle, setCycle] = useState<PDCACycle>(initialCycle)
+  const [newAction, setNewAction] = useState({ description: '', responsible: '', dueDate: '' })
+  const [newMetric, setNewMetric] = useState({ name: '', baseline: 0, target: 0, current: 0, unit: '' })
+  const [newResource, setNewResource] = useState('')
+  const [newObservation, setNewObservation] = useState('')
+  const [newIssue, setNewIssue] = useState<{ description: string; severity: Issue['severity']; resolution: string }>({ 
+    description: '', 
+    severity: 'medium', 
+    resolution: '' 
+  })
+  const [newLearning, setNewLearning] = useState('')
+  const [newDecision, setNewDecision] = useState('')
+
+  // Calculate progress percentage
+  const progress = useMemo(() => {
+    const phases: PDCAPhase[] = ['plan', 'do', 'check', 'act']
+    const currentIndex = phases.indexOf(cycle.currentPhase)
+    return ((currentIndex + 1) / 4) * 100
+  }, [cycle.currentPhase])
+
+  // Handle phase navigation
+  const handleAdvancePhase = () => {
+    const phases: PDCAPhase[] = ['plan', 'do', 'check', 'act']
+    const currentIndex = phases.indexOf(cycle.currentPhase)
+    if (currentIndex < phases.length - 1) {
+      setCycle({ ...cycle, currentPhase: phases[currentIndex + 1] })
+      toast.success(`Advanced to ${phases[currentIndex + 1].toUpperCase()} phase`)
+    } else {
+      toast.success('PDCA Cycle completed! Consider starting a new cycle.')
+    }
+  }
+
+  // Action Item Management
+  const handleAddAction = () => {
+    if (!newAction.description || !newAction.responsible) {
+      toast.error('Please provide action description and responsible person')
+      return
+    }
+    
+    const action: ActionItem = {
+      id: Date.now().toString(),
+      ...newAction,
+      status: 'pending'
+    }
+    
+    setCycle({
+      ...cycle,
+      do: { ...cycle.do, actions: [...cycle.do.actions, action] }
+    })
+    setNewAction({ description: '', responsible: '', dueDate: '' })
+    toast.success('Action item added')
+  }
+
+  const handleUpdateActionStatus = (id: string, status: ActionItem['status']) => {
+    setCycle({
+      ...cycle,
+      do: {
+        ...cycle.do,
+        actions: cycle.do.actions.map(a => a.id === id ? { ...a, status } : a)
+      }
+    })
+  }
+
+  const handleDeleteAction = (id: string) => {
+    setCycle({
+      ...cycle,
+      do: {
+        ...cycle.do,
+        actions: cycle.do.actions.filter(a => a.id !== id)
+      }
+    })
+    toast.success('Action item removed')
+  }
+
+  // Metric Management
+  const handleAddMetric = () => {
+    if (!newMetric.name || !newMetric.unit) {
+      toast.error('Please provide metric name and unit')
+      return
+    }
+    
+    const metric: Metric = {
+      id: Date.now().toString(),
+      ...newMetric
+    }
+    
+    setCycle({
+      ...cycle,
+      plan: { ...cycle.plan, metrics: [...cycle.plan.metrics, metric] }
+    })
+    setNewMetric({ name: '', baseline: 0, target: 0, current: 0, unit: '' })
+    toast.success('Metric added')
+  }
+
+  const handleUpdateMetric = (id: string, current: number) => {
+    setCycle({
+      ...cycle,
+      plan: {
+        ...cycle.plan,
+        metrics: cycle.plan.metrics.map(m => m.id === id ? { ...m, current } : m)
+      }
+    })
+  }
+
+  // Resource Management
+  const handleAddResource = () => {
+    if (!newResource.trim()) return
+    setCycle({
+      ...cycle,
+      plan: { ...cycle.plan, resources: [...cycle.plan.resources, newResource] }
+    })
+    setNewResource('')
+    toast.success('Resource added')
+  }
+
+  const handleDeleteResource = (index: number) => {
+    setCycle({
+      ...cycle,
+      plan: { ...cycle.plan, resources: cycle.plan.resources.filter((_, i) => i !== index) }
+    })
+  }
+
+  // Observation Management
+  const handleAddObservation = () => {
+    if (!newObservation.trim()) return
+    setCycle({
+      ...cycle,
+      do: { ...cycle.do, observations: [...cycle.do.observations, newObservation] }
+    })
+    setNewObservation('')
+    toast.success('Observation added')
+  }
+
+  // Issue Management
+  const handleAddIssue = () => {
+    if (!newIssue.description) return
+    const issue: Issue = {
+      id: Date.now().toString(),
+      ...newIssue
+    }
+    setCycle({
+      ...cycle,
+      do: { ...cycle.do, issues: [...cycle.do.issues, issue] }
+    })
+    setNewIssue({ description: '', severity: 'medium', resolution: '' })
+    toast.success('Issue added')
+  }
+
+  // Learning Management
+  const handleAddLearning = () => {
+    if (!newLearning.trim()) return
+    setCycle({
+      ...cycle,
+      check: { ...cycle.check, learnings: [...cycle.check.learnings, newLearning] }
+    })
+    setNewLearning('')
+    toast.success('Learning captured')
+  }
+
+  // Decision Management
+  const handleAddDecision = () => {
+    if (!newDecision.trim()) return
+    setCycle({
+      ...cycle,
+      act: { ...cycle.act, decisions: [...cycle.act.decisions, newDecision] }
+    })
+    setNewDecision('')
+    toast.success('Decision recorded')
+  }
+
+  // Export functionality
+  const handleExport = () => {
+    const exportData = {
+      ...cycle,
+      exportDate: new Date().toISOString(),
+      progress: progress
+    }
+    
+    const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `pdca-cycle-${cycle.name || 'unnamed'}-${new Date().toISOString().split('T')[0]}.json`
+    a.click()
+    URL.revokeObjectURL(url)
+    toast.success('PDCA cycle exported')
+  }
+
+  // Phase indicator component
+  const PhaseIndicator = ({ phase, active }: { phase: PDCAPhase; active: boolean }) => {
+    const icons = {
+      plan: Target,
+      do: Play,
+      check: Check,
+      act: RefreshCw
+    }
+    const Icon = icons[phase]
+    
+    return (
+      <div className={`flex flex-col items-center ${active ? 'text-blue-600' : 'text-gray-400'}`}>
+        <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
+          active ? 'bg-blue-600 text-white' : 'bg-gray-200'
+        }`}>
+          <Icon className="h-6 w-6" />
+        </div>
+        <span className="mt-2 text-sm font-medium capitalize">{phase}</span>
+      </div>
+    )
+  }
+
+  return (
+    <div className="container mx-auto p-6 max-w-7xl">
+      {/* Header */}
+      <div className="mb-8">
+        <div className="flex items-center gap-4 mb-4">
+          <Button variant="outline" size="sm" onClick={handleBackClick}>
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Back to CI Tools
+          </Button>
+        </div>
+        <div className="flex items-center justify-between mb-4">
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900">PDCA Cycle Manager</h1>
+            <p className="text-gray-600 mt-1">Plan-Do-Check-Act continuous improvement methodology</p>
+          </div>
+          <Button onClick={handleExport} variant="outline">
+            Export Cycle
+          </Button>
+        </div>
+
+        {/* Progress Indicator */}
+        <Card>
+          <CardContent className="pt-6">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between mb-2">
+                <PhaseIndicator phase="plan" active={cycle.currentPhase === 'plan'} />
+                <div className="flex-1 h-1 bg-gray-200 mx-4">
+                  <div className="h-full bg-blue-600" style={{ width: progress >= 25 ? '100%' : '0%' }} />
+                </div>
+                <PhaseIndicator phase="do" active={cycle.currentPhase === 'do'} />
+                <div className="flex-1 h-1 bg-gray-200 mx-4">
+                  <div className="h-full bg-blue-600" style={{ width: progress >= 50 ? '100%' : '0%' }} />
+                </div>
+                <PhaseIndicator phase="check" active={cycle.currentPhase === 'check'} />
+                <div className="flex-1 h-1 bg-gray-200 mx-4">
+                  <div className="h-full bg-blue-600" style={{ width: progress >= 75 ? '100%' : '0%' }} />
+                </div>
+                <PhaseIndicator phase="act" active={cycle.currentPhase === 'act'} />
+              </div>
+              <Progress value={progress} className="h-2" />
+              <div className="flex items-center justify-between text-sm text-gray-600">
+                <span>Current Phase: <Badge>{cycle.currentPhase.toUpperCase()}</Badge></span>
+                <span>{Math.round(progress)}% Complete</span>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Basic Information */}
+      <Card className="mb-6">
+        <CardHeader>
+          <CardTitle>Cycle Information</CardTitle>
+          <CardDescription>Define the basic details of your PDCA cycle</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <Label htmlFor="name">Cycle Name *</Label>
+              <Input
+                id="name"
+                value={cycle.name}
+                onChange={(e) => setCycle({ ...cycle, name: e.target.value })}
+                placeholder="e.g., Reduce Setup Time"
+              />
+            </div>
+            <div>
+              <Label htmlFor="objective">Objective *</Label>
+              <Input
+                id="objective"
+                value={cycle.objective}
+                onChange={(e) => setCycle({ ...cycle, objective: e.target.value })}
+                placeholder="e.g., Reduce setup time by 30%"
+              />
+            </div>
+          </div>
+          <div>
+            <Label htmlFor="description">Description</Label>
+            <Textarea
+              id="description"
+              value={cycle.description}
+              onChange={(e) => setCycle({ ...cycle, description: e.target.value })}
+              placeholder="Provide a detailed description of the improvement initiative"
+              rows={3}
+            />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <Label htmlFor="startDate">Start Date</Label>
+              <Input
+                id="startDate"
+                type="date"
+                value={cycle.startDate}
+                onChange={(e) => setCycle({ ...cycle, startDate: e.target.value })}
+              />
+            </div>
+            <div>
+              <Label htmlFor="targetDate">Target Completion Date</Label>
+              <Input
+                id="targetDate"
+                type="date"
+                value={cycle.targetDate}
+                onChange={(e) => setCycle({ ...cycle, targetDate: e.target.value })}
+              />
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Phase-specific Content */}
+      <Tabs value={cycle.currentPhase} onValueChange={(value) => setCycle({ ...cycle, currentPhase: value as PDCAPhase })}>
+        <TabsList className="grid w-full grid-cols-4">
+          <TabsTrigger value="plan">Plan</TabsTrigger>
+          <TabsTrigger value="do">Do</TabsTrigger>
+          <TabsTrigger value="check">Check</TabsTrigger>
+          <TabsTrigger value="act">Act</TabsTrigger>
+        </TabsList>
+
+        {/* PLAN Phase */}
+        <TabsContent value="plan" className="space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <Target className="h-5 w-5 mr-2" />
+                Plan Phase
+              </CardTitle>
+              <CardDescription>
+                Define the problem, set objectives, and plan the improvement
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <Label htmlFor="hypothesis">Hypothesis / Improvement Theory</Label>
+                <Textarea
+                  id="hypothesis"
+                  value={cycle.plan.hypothesis}
+                  onChange={(e) => setCycle({ 
+                    ...cycle, 
+                    plan: { ...cycle.plan, hypothesis: e.target.value } 
+                  })}
+                  placeholder="What do you believe will improve the process?"
+                  rows={3}
+                />
+              </div>
+
+              {/* Metrics */}
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <Label>Metrics to Track</Label>
+                </div>
+                {cycle.plan.metrics.length > 0 && (
+                  <div className="space-y-3 mb-4">
+                    {cycle.plan.metrics.map((metric) => (
+                      <Card key={metric.id}>
+                        <CardContent className="pt-4">
+                          <div className="flex items-center justify-between">
+                            <div className="flex-1">
+                              <h4 className="font-medium">{metric.name}</h4>
+                              <p className="text-sm text-gray-600">
+                                Baseline: {metric.baseline} {metric.unit} → Target: {metric.target} {metric.unit}
+                              </p>
+                              <div className="mt-2">
+                                <Label className="text-xs">Current Value</Label>
+                                <Input
+                                  type="number"
+                                  value={metric.current}
+                                  onChange={(e) => handleUpdateMetric(metric.id, Number(e.target.value))}
+                                  className="w-32"
+                                />
+                              </div>
+                            </div>
+                            <TrendingUp className={`h-5 w-5 ${
+                              metric.current >= metric.target ? 'text-green-600' : 'text-gray-400'
+                            }`} />
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                )}
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-2">
+                  <Input
+                    placeholder="Metric name"
+                    value={newMetric.name}
+                    onChange={(e) => setNewMetric({ ...newMetric, name: e.target.value })}
+                  />
+                  <Input
+                    type="number"
+                    placeholder="Baseline"
+                    value={newMetric.baseline || ''}
+                    onChange={(e) => setNewMetric({ ...newMetric, baseline: Number(e.target.value) })}
+                  />
+                  <Input
+                    type="number"
+                    placeholder="Target"
+                    value={newMetric.target || ''}
+                    onChange={(e) => setNewMetric({ ...newMetric, target: Number(e.target.value) })}
+                  />
+                  <Input
+                    placeholder="Unit"
+                    value={newMetric.unit}
+                    onChange={(e) => setNewMetric({ ...newMetric, unit: e.target.value })}
+                  />
+                  <Button onClick={handleAddMetric}>
+                    <Plus className="h-4 w-4 mr-1" />
+                    Add
+                  </Button>
+                </div>
+              </div>
+
+              {/* Resources */}
+              <div>
+                <Label>Resources Required</Label>
+                {cycle.plan.resources.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    {cycle.plan.resources.map((resource, index) => (
+                      <Badge key={index} variant="secondary" className="pl-3 pr-2">
+                        {resource}
+                        <button
+                          onClick={() => handleDeleteResource(index)}
+                          className="ml-2 hover:text-red-600"
+                        >
+                          <Trash2 className="h-3 w-3" />
+                        </button>
+                      </Badge>
+                    ))}
+                  </div>
+                )}
+                <div className="flex gap-2">
+                  <Input
+                    placeholder="Add resource (e.g., Budget, Personnel, Equipment)"
+                    value={newResource}
+                    onChange={(e) => setNewResource(e.target.value)}
+                    onKeyPress={(e) => e.key === 'Enter' && handleAddResource()}
+                  />
+                  <Button onClick={handleAddResource}>
+                    <Plus className="h-4 w-4 mr-1" />
+                    Add
+                  </Button>
+                </div>
+              </div>
+
+              <div>
+                <Label htmlFor="timeline">Implementation Timeline</Label>
+                <Textarea
+                  id="timeline"
+                  value={cycle.plan.timeline}
+                  onChange={(e) => setCycle({ 
+                    ...cycle, 
+                    plan: { ...cycle.plan, timeline: e.target.value } 
+                  })}
+                  placeholder="Describe the timeline and milestones"
+                  rows={3}
+                />
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        {/* DO Phase */}
+        <TabsContent value="do" className="space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <Play className="h-5 w-5 mr-2" />
+                Do Phase
+              </CardTitle>
+              <CardDescription>
+                Execute the plan, collect data, and document observations
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              {/* Action Items */}
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <Label>Action Items</Label>
+                  <Badge variant="outline">
+                    {cycle.do.actions.filter(a => a.status === 'completed').length} / {cycle.do.actions.length} Completed
+                  </Badge>
+                </div>
+                {cycle.do.actions.length > 0 && (
+                  <div className="space-y-2 mb-4">
+                    {cycle.do.actions.map((action) => (
+                      <Card key={action.id}>
+                        <CardContent className="pt-4">
+                          <div className="flex items-start justify-between">
+                            <div className="flex-1">
+                              <div className="flex items-center gap-2 mb-1">
+                                <Badge variant={
+                                  action.status === 'completed' ? 'default' : 
+                                  action.status === 'in_progress' ? 'secondary' : 'outline'
+                                }>
+                                  {action.status.replace('_', ' ')}
+                                </Badge>
+                                <p className="font-medium">{action.description}</p>
+                              </div>
+                              <p className="text-sm text-gray-600">
+                                Responsible: {action.responsible}
+                                {action.dueDate && ` | Due: ${action.dueDate}`}
+                              </p>
+                            </div>
+                            <div className="flex gap-2">
+                              <Select
+                                value={action.status}
+                                onValueChange={(value) => handleUpdateActionStatus(action.id, value as ActionItem['status'])}
+                              >
+                                <SelectTrigger className="w-32">
+                                  <SelectValue />
+                                </SelectTrigger>
+                                <SelectContent>
+                                  <SelectItem value="pending">Pending</SelectItem>
+                                  <SelectItem value="in_progress">In Progress</SelectItem>
+                                  <SelectItem value="completed">Completed</SelectItem>
+                                </SelectContent>
+                              </Select>
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                onClick={() => handleDeleteAction(action.id)}
+                              >
+                                <Trash2 className="h-4 w-4" />
+                              </Button>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                )}
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+                  <Input
+                    placeholder="Action description"
+                    value={newAction.description}
+                    onChange={(e) => setNewAction({ ...newAction, description: e.target.value })}
+                    className="md:col-span-2"
+                  />
+                  <Input
+                    placeholder="Responsible person"
+                    value={newAction.responsible}
+                    onChange={(e) => setNewAction({ ...newAction, responsible: e.target.value })}
+                  />
+                  <div className="flex gap-2">
+                    <Input
+                      type="date"
+                      value={newAction.dueDate}
+                      onChange={(e) => setNewAction({ ...newAction, dueDate: e.target.value })}
+                    />
+                    <Button onClick={handleAddAction}>
+                      <Plus className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Observations */}
+              <div>
+                <Label>Observations & Data Collection</Label>
+                {cycle.do.observations.length > 0 && (
+                  <ul className="space-y-2 mb-3">
+                    {cycle.do.observations.map((obs, index) => (
+                      <li key={index} className="flex items-start gap-2 p-2 bg-gray-50 rounded">
+                        <Check className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
+                        <span className="text-sm">{obs}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <div className="flex gap-2">
+                  <Textarea
+                    placeholder="Document observations and data points..."
+                    value={newObservation}
+                    onChange={(e) => setNewObservation(e.target.value)}
+                    rows={2}
+                  />
+                  <Button onClick={handleAddObservation}>
+                    <Plus className="h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
+
+              {/* Issues */}
+              <div>
+                <Label>Issues Encountered</Label>
+                {cycle.do.issues.length > 0 && (
+                  <div className="space-y-2 mb-3">
+                    {cycle.do.issues.map((issue) => (
+                      <Card key={issue.id} className="border-l-4 border-l-orange-500">
+                        <CardContent className="pt-4">
+                          <div className="flex items-start justify-between">
+                            <div className="flex-1">
+                              <div className="flex items-center gap-2 mb-1">
+                                <Badge variant={
+                                  issue.severity === 'high' ? 'destructive' : 
+                                  issue.severity === 'medium' ? 'secondary' : 'outline'
+                                }>
+                                  {issue.severity}
+                                </Badge>
+                                <p className="font-medium">{issue.description}</p>
+                              </div>
+                              {issue.resolution && (
+                                <p className="text-sm text-gray-600 mt-1">
+                                  Resolution: {issue.resolution}
+                                </p>
+                              )}
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                )}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+                  <Input
+                    placeholder="Issue description"
+                    value={newIssue.description}
+                    onChange={(e) => setNewIssue({ ...newIssue, description: e.target.value })}
+                  />
+                  <Select
+                    value={newIssue.severity}
+                    onValueChange={(value) => setNewIssue({ ...newIssue, severity: value as Issue['severity'] })}
+                  >
+                    <SelectTrigger>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="low">Low</SelectItem>
+                      <SelectItem value="medium">Medium</SelectItem>
+                      <SelectItem value="high">High</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <div className="flex gap-2">
+                    <Input
+                      placeholder="Resolution"
+                      value={newIssue.resolution}
+                      onChange={(e) => setNewIssue({ ...newIssue, resolution: e.target.value })}
+                    />
+                    <Button onClick={handleAddIssue}>
+                      <Plus className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        {/* CHECK Phase */}
+        <TabsContent value="check" className="space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <Check className="h-5 w-5 mr-2" />
+                Check Phase
+              </CardTitle>
+              <CardDescription>
+                Analyze results, compare against targets, and identify learnings
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <Label htmlFor="resultsAnalysis">Results Analysis</Label>
+                <Textarea
+                  id="resultsAnalysis"
+                  value={cycle.check.resultsAnalysis}
+                  onChange={(e) => setCycle({ 
+                    ...cycle, 
+                    check: { ...cycle.check, resultsAnalysis: e.target.value } 
+                  })}
+                  placeholder="Analyze the results of the implementation. Did you achieve your objectives?"
+                  rows={4}
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="variance">Variance from Target (%)</Label>
+                <Input
+                  id="variance"
+                  type="number"
+                  value={cycle.check.variance}
+                  onChange={(e) => setCycle({ 
+                    ...cycle, 
+                    check: { ...cycle.check, variance: Number(e.target.value) } 
+                  })}
+                  placeholder="e.g., -15 for 15% below target, +10 for 10% above target"
+                />
+                {cycle.check.variance !== 0 && (
+                  <p className={`text-sm mt-1 ${cycle.check.variance > 0 ? 'text-green-600' : 'text-red-600'}`}>
+                    {cycle.check.variance > 0 ? 'Exceeded' : 'Below'} target by {Math.abs(cycle.check.variance)}%
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <Label>Key Learnings</Label>
+                {cycle.check.learnings.length > 0 && (
+                  <ul className="space-y-2 mb-3">
+                    {cycle.check.learnings.map((learning, index) => (
+                      <li key={index} className="flex items-start gap-2 p-3 bg-blue-50 rounded">
+                        <Award className="h-4 w-4 text-blue-600 mt-1 flex-shrink-0" />
+                        <span className="text-sm">{learning}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <div className="flex gap-2">
+                  <Input
+                    placeholder="What did you learn from this cycle?"
+                    value={newLearning}
+                    onChange={(e) => setNewLearning(e.target.value)}
+                    onKeyPress={(e) => e.key === 'Enter' && handleAddLearning()}
+                  />
+                  <Button onClick={handleAddLearning}>
+                    <Plus className="h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
+
+              <div>
+                <Label>Next Steps</Label>
+                {cycle.check.nextSteps.length > 0 && (
+                  <ul className="space-y-2 mb-3">
+                    {cycle.check.nextSteps.map((step, index) => (
+                      <li key={index} className="flex items-start gap-2 p-2 bg-gray-50 rounded">
+                        <span className="text-blue-600 font-semibold">{index + 1}.</span>
+                        <span className="text-sm">{step}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <div className="flex gap-2">
+                  <Input
+                    placeholder="Add next step..."
+                    onKeyPress={(e) => {
+                      if (e.key === 'Enter' && e.currentTarget.value) {
+                        setCycle({
+                          ...cycle,
+                          check: { ...cycle.check, nextSteps: [...cycle.check.nextSteps, e.currentTarget.value] }
+                        })
+                        e.currentTarget.value = ''
+                      }
+                    }}
+                  />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        {/* ACT Phase */}
+        <TabsContent value="act" className="space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <RefreshCw className="h-5 w-5 mr-2" />
+                Act Phase
+              </CardTitle>
+              <CardDescription>
+                Standardize improvements and plan the next cycle
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <Label>Decisions Made</Label>
+                {cycle.act.decisions.length > 0 && (
+                  <ul className="space-y-2 mb-3">
+                    {cycle.act.decisions.map((decision, index) => (
+                      <li key={index} className="flex items-start gap-2 p-3 bg-green-50 rounded">
+                        <Check className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
+                        <span className="text-sm font-medium">{decision}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <div className="flex gap-2">
+                  <Input
+                    placeholder="What decisions were made based on the results?"
+                    value={newDecision}
+                    onChange={(e) => setNewDecision(e.target.value)}
+                    onKeyPress={(e) => e.key === 'Enter' && handleAddDecision()}
+                  />
+                  <Button onClick={handleAddDecision}>
+                    <Plus className="h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
+
+              <div>
+                <Label>Standardization Actions</Label>
+                {cycle.act.standardization.length > 0 && (
+                  <ul className="space-y-2 mb-3">
+                    {cycle.act.standardization.map((standard, index) => (
+                      <li key={index} className="p-2 bg-gray-50 rounded text-sm">
+                        {standard}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <div className="flex gap-2">
+                  <Textarea
+                    placeholder="What processes or practices should be standardized?"
+                    rows={2}
+                    onKeyPress={(e) => {
+                      if (e.key === 'Enter' && !e.shiftKey && e.currentTarget.value) {
+                        e.preventDefault()
+                        setCycle({
+                          ...cycle,
+                          act: { ...cycle.act, standardization: [...cycle.act.standardization, e.currentTarget.value] }
+                        })
+                        e.currentTarget.value = ''
+                      }
+                    }}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <Label htmlFor="nextCycle">Next PDCA Cycle</Label>
+                <Textarea
+                  id="nextCycle"
+                  value={cycle.act.nextCycle}
+                  onChange={(e) => setCycle({ 
+                    ...cycle, 
+                    act: { ...cycle.act, nextCycle: e.target.value } 
+                  })}
+                  placeholder="What is the focus of the next improvement cycle?"
+                  rows={3}
+                />
+              </div>
+
+              <div>
+                <Label>Documentation Created</Label>
+                {cycle.act.documentation.length > 0 && (
+                  <ul className="space-y-2 mb-3">
+                    {cycle.act.documentation.map((doc, index) => (
+                      <li key={index} className="p-2 bg-gray-50 rounded text-sm flex items-center gap-2">
+                        <Calendar className="h-4 w-4 text-gray-600" />
+                        {doc}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <div className="flex gap-2">
+                  <Input
+                    placeholder="Document type (e.g., SOP, Training Material, Work Instruction)"
+                    onKeyPress={(e) => {
+                      if (e.key === 'Enter' && e.currentTarget.value) {
+                        setCycle({
+                          ...cycle,
+                          act: { ...cycle.act, documentation: [...cycle.act.documentation, e.currentTarget.value] }
+                        })
+                        e.currentTarget.value = ''
+                      }
+                    }}
+                  />
+                </div>
+              </div>
+
+              {cycle.currentPhase === 'act' && (
+                <div className="pt-4 border-t">
+                  <div className="flex items-center justify-between p-4 bg-green-50 rounded-lg">
+                    <div>
+                      <h4 className="font-semibold text-green-900">Cycle Complete!</h4>
+                      <p className="text-sm text-green-700">
+                        Consider starting a new PDCA cycle to continue improving
+                      </p>
+                    </div>
+                    <Award className="h-8 w-8 text-green-600" />
+                  </div>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
+
+      {/* Navigation */}
+      <div className="flex justify-between mt-6">
+        <Button
+          variant="outline"
+          onClick={() => {
+            const phases: PDCAPhase[] = ['plan', 'do', 'check', 'act']
+            const currentIndex = phases.indexOf(cycle.currentPhase)
+            if (currentIndex > 0) {
+              setCycle({ ...cycle, currentPhase: phases[currentIndex - 1] })
+            }
+          }}
+          disabled={cycle.currentPhase === 'plan'}
+        >
+          Previous Phase
+        </Button>
+        <Button
+          onClick={handleAdvancePhase}
+          disabled={cycle.currentPhase === 'act'}
+        >
+          {cycle.currentPhase === 'act' ? 'Cycle Complete' : 'Next Phase'}
+        </Button>
+      </div>
+    </div>
+  )
+}
