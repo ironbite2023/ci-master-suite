@@ -1,4 +1,4 @@
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+import { createClient } from '@/lib/supabase/client'
 import type { Database } from '@/types/database'
 import type { GameLeaderboard, GameDifficulty } from '@/types/games'
 
@@ -6,7 +6,7 @@ import type { GameLeaderboard, GameDifficulty } from '@/types/games'
 // SUPABASE CLIENT
 // ============================================================================
 
-const supabase = createClientComponentClient<Database>()
+const supabase = createClient()
 
 // ============================================================================
 // LEADERBOARD SERVICE

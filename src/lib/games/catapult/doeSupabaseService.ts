@@ -4,7 +4,7 @@
  * Works in tandem with localStorage for optimal performance
  */
 
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+import { createClient } from '@/lib/supabase/client'
 import type { DOEExperiment } from '@/types/catapult'
 import { performDOEAnalysis } from './doeCalculations'
 
@@ -52,7 +52,7 @@ export interface DOEStats {
 // ============================================================================
 
 class DOESupabaseService {
-  private supabase = createClientComponentClient()
+  private supabase = createClient()
   private gameId: string | null = null
 
   /**
