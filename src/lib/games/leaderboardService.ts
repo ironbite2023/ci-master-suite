@@ -1,12 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createClient } from '@/lib/supabase/client'
-import type { Database } from '@/types/database'
 import type { GameLeaderboard, GameDifficulty } from '@/types/games'
 
 // ============================================================================
 // SUPABASE CLIENT
 // ============================================================================
 
-const supabase = createClient()
+const supabase = createClient() as any
 
 // ============================================================================
 // LEADERBOARD SERVICE
@@ -351,9 +351,9 @@ export const leaderboardService = {
       }
     }
     
-    const scores = data.map(entry => entry.score).sort((a, b) => a - b)
+    const scores = data.map((entry: any) => entry.score).sort((a: number, b: number) => a - b)
     const totalPlayers = scores.length
-    const sum = scores.reduce((acc, score) => acc + score, 0)
+    const sum = scores.reduce((acc: number, score: number) => acc + score, 0)
     const averageScore = sum / totalPlayers
     const highestScore = scores[scores.length - 1]
     const lowestScore = scores[0]

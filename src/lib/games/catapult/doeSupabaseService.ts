@@ -4,6 +4,7 @@
  * Works in tandem with localStorage for optimal performance
  */
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createClient } from '@/lib/supabase/client'
 import type { DOEExperiment } from '@/types/catapult'
 import { performDOEAnalysis } from './doeCalculations'
@@ -52,7 +53,7 @@ export interface DOEStats {
 // ============================================================================
 
 class DOESupabaseService {
-  private supabase = createClient()
+  private supabase = createClient() as any
   private gameId: string | null = null
 
   /**

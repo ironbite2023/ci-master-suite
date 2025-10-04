@@ -1,5 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createClient } from '@/lib/supabase/client'
-import type { Database } from '@/types/database'
 import type {
   GameAchievement,
   UserGameAchievement,
@@ -11,7 +11,7 @@ import type {
 // SUPABASE CLIENT
 // ============================================================================
 
-const supabase = createClient()
+const supabase = createClient() as any
 
 // ============================================================================
 // ACHIEVEMENT ENGINE

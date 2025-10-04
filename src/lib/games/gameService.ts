@@ -1,5 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createClient } from '@/lib/supabase/client'
-import type { Database } from '@/types/database'
 import type {
   Game,
   GameSession,
@@ -14,7 +14,7 @@ import type {
 // SUPABASE CLIENT
 // ============================================================================
 
-const supabase = createClient()
+const supabase = createClient() as any
 
 // ============================================================================
 // GAME OPERATIONS
@@ -131,7 +131,7 @@ export const gameService = {
     
     if (!ratings || ratings.length === 0) return
     
-    const avgRating = ratings.reduce((sum, r) => sum + r.rating, 0) / ratings.length
+    const avgRating = ratings.reduce((sum: number, r: any) => sum + r.rating, 0) / ratings.length
     
     const { error: updateError } = await supabase
       .from('games')

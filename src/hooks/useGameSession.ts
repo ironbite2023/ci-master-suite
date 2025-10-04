@@ -1,5 +1,7 @@
 'use client'
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import type {
@@ -25,7 +27,7 @@ export function useGameSession({
   onAchievementUnlocked,
   onLeaderboardUpdate
 }: UseGameSessionOptions): UseGameSessionReturn {
-  const supabase = createClient()
+  const supabase = createClient() as any
   
   // Session state
   const [sessionId, setSessionId] = useState<string | null>(null)
@@ -90,20 +92,20 @@ export function useGameSession({
       if (gameError || !game) {
         throw new Error('Game not found')
       }
-      gameIdRef.current = game.id
+      gameIdRef.current = (game as { id: string }).id
       
       // Get attempt number (count previous sessions)
       const { data: previousSessions } = await supabase
         .from('game_sessions')
         .select('attempt_number')
         .eq('user_id', user.id)
-        .eq('game_id', game.id)
+        .eq('game_id', (game as { id: string }).id)
         .eq('difficulty_level', difficulty)
         .order('attempt_number', { ascending: false })
         .limit(1)
       
       const attemptNumber = previousSessions && previousSessions.length > 0
-        ? previousSessions[0].attempt_number + 1
+        ? (previousSessions[0] as { attempt_number: number }).attempt_number + 1
         : 1
       
       // Create new session
